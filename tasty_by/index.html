@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title >Лучший агрегатор кафе и ресторанов в Беларуси.</title>
+	<link href = "css/mainpage.css" rel = "stylesheet">	
+	<link href = "css/about.css" rel = "stylesheet">	
+	<link href = "css/list.css" rel = "stylesheet">
+	<link href = "css/cart.css" rel = "stylesheet">
+	<link href = "css/personalarea.css" rel = "stylesheet">
+	<link rel = "stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel = "icon" type = "image/png" href = "css/img/favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+	<div class = "full-header">
+		<div class = "logo">
+			<img src="css/img/newlogo.png">
+		</div>
+		<div class="container-search">
+	   		<input type="search" id="search" placeholder="Поиск" />
+		</div>
+		<div class = "container-list">
+			<ul class = "list">
+				<li>
+					<a class = "cafe" href="#list">Кафе</a>
+				</li>
+				<li>
+					<a class = "cuisine" href="#list">Кухни</a>
+				</li>
+				<li>
+					<a class = "food" href="#list">Блюда</a>
+				</li>
+				<li>
+					<a class = "showtop">Топ-5</a>
+				</li>
+			</ul>
+		</div>
+		<div class = "cart">
+			<a href="#cart">
+				<i class="fa fa-cart-plus"></i>
+			</a>
+		</div>
+		<div class = "container-login-logout">
+			<a class = "login" href="">Вход</a> 
+			<span>|</span>
+			<a class = "registration" href="">Регистрация</a>
+		</div>
+	</div>
+	<div class = "small-header">
+		<div class = "logo">
+			<img src="css/img/newlogo.png">
+		</div>
+		<div class = "container-list-submenu">
+			<ul class = "list-submenu">
+				<li><a href="#list" class = 'cafe'>Кафе</a></li>
+				<li><hr></li>
+				<li><a href="#list" class = 'cuisine'>Кухни</a></li>
+				<li><hr></li>
+				<li><a href="#list" class = 'food'>Блюда</a></li>
+				<li><hr></li>
+				<li><a class = "showtop">Топ-5</a></li>
+				<li><hr></li>
+				<li><a href="#cart">Корзина</a></li>
+				<li><hr></li>
+				<li><a class = "submenu-login" href="">Вход</a></li>
+				<li><hr></li>
+				<li><a class = "submenu-registration" href="">Регистрация</a></li>
+			</ul>		
+		</div>
+		<div class = "bar">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div class = "cover-div">
+		<div class = "div-login">
+			<form class = "form-login">
+				<div class = "container">
+				<!-- <div></div> -->
+					<div class = "login-logo"><img src="css/img/newlogo.png"></div>
+					<div class = "close-login">
+						<i class="fa fa-times-circle" aria-hidden="true"></i>
+					</div>
+				</div>
+				<input class = "login-name" type="text" placeholder="Логин">
+				<input class = "login-password" type="password" placeholder="Пароль">
+				<div class = "container-button">
+					<button class = "button-login">Войти</button>
+					<button class = "button-registration">Регистрация</button>
+				</div>
+				<span>Войти с помощью соцсетей:</span>
+				<div class = "login-with">
+					<div class =  "social-vk"><i class="fa fa-vk"></i></div>
+					<div class =  "social-odnoklassniki"><i class="fa fa-odnoklassniki"></i></div>
+					<div class =  "social-facebook"><i class="fa fa-facebook"></i></div>
+					<div class =  "social-twitter"><i class="fa fa-twitter"></i></div>
+				</div>
+				<!-- <a class = "forgot-pasword" href="">Забыли пароль?</a> -->
+			</form>
+		</div>
+		<div class = "div-registration">
+			<form class = "form-registration">
+				<div class = "container">
+					<div class = "registration-logo"><img src="css/img/newlogo.png"></div>
+					<div class = "close-registration">
+						<i class="fa fa-times-circle" aria-hidden="true"></i>
+					</div>
+				</div>
+				<input class = "registration-name" type="text" placeholder="Имя">
+				<input class = "registration-sername" type="text" placeholder = "Фамилия">
+				<input class = "registration-login" type="text" placeholder = "Логин">
+				<input class = "registration-password" type="password" placeholder = "Пароль">
+				<input class = "registration-repeat-password" type="password" placeholder = "Повторите пароль">				
+				<input class = "registration-phone-email" type="text" placeholder = "Номер телефона / Электронная почта">
+				<button class = "button-registration-finally">Зарегестрироваться</button>
+			</form>
+		</div>
+	</div>
+	<div class = "container-main-top">
+		<div class = "back">
+			<span> < Назад</span>
+		</div>
+		<div class = "container-top">
+			<div class = "content-top">
+				<span>Топ-5 кафе-ресторанов</span>
+				<ul>
+					<li>value 1</li>
+					<li>value 2</li>
+					<li>value 3</li>
+					<li>value 4</li>
+					<li>value 5</li>
+					<li class = 'cafe'>Весь список</li>
+				</ul>
+			</div>
+		</div>
+		<div class = "container-top">
+			<div class = "content-top">
+				<span>Топ-5 кухонь</span>
+				<ul>
+					<li>value 1</li>
+					<li>value 2</li>
+					<li>value 3</li>
+					<li>value 4</li>
+					<li>value 5</li>
+					<li class = 'cuisine'>Весь список</li>
+				</ul>
+			</div>
+		</div>
+		<div class = "container-top">
+			<div class = "content-top">
+				<span>Топ-5 блюд</span>
+				<ul>
+					<li>value 1</li>
+					<li>value 2</li>
+					<li>value 3</li>
+					<li>value 4</li>
+					<li>value 5</li>
+					<li class = 'food'>Весь список</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class = "back-on-top">
+		<i class="fa fa-arrow-circle-up"></i>
+	</div>
+	<div class = "wrapper">
+	</div>
+	<script src = 'index.js' async ></script>
+	<script src = 'javascript/mainpage.js' async ></script>
+	<script src = 'javascript/about.js' async ></script>
+	<script src = 'javascript/cart.js' async></script>
+	<script src = 'javascript/list.js' async></script>
+	<script src = 'javascript/personalarea.js' async></script>
+	<script src = 'javascript/route.js' async></script>
+</body>
+</html>

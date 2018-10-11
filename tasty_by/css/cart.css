@@ -1,0 +1,275 @@
+div.full-window {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 88vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 90px;
+    left: 0px;
+} 
+
+div.cart-content {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 75vh;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /*border-radius: 10px;*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+div.cart-content > div.cart-current-title {
+	align-self: flex-start;
+	margin: 20px 0 0 20px;	
+}
+
+div.cart-content > div.cart-current-title > span {
+	font-family: cursive;
+	font-size: larger;
+	color: floralwhite;
+}
+
+div.cart-content > div.cart-all-food {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 97%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+div.cart-content > div.cart-all-food > div.cart-container-food {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 100px;
+    transition: background-color 0.5s;
+	padding: 15px 0;
+}
+
+div.cart-container-food:hover {
+	background-color: rgba(0,0,0,0.8);
+	transition: background-color 0.5s;
+	cursor: pointer;
+}
+
+
+div.cart-content > div.cart-all-food > div.cart-container-food > div.food-image {
+	background-position: center;
+	background-size: cover;
+	min-width: 200px;
+	min-height: 100px;	
+	/*border-radius: 5px;*/
+	box-shadow: 0px 0px 10px #000; 
+}
+
+div.cart-all-food > div.cart-container-food > div.container-about-food{
+	width: 60%;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    /*border-radius: 10px; */
+    padding: 10px;
+    min-height: 76px; 
+    margin: 0 10px;
+}	
+
+div.cart-container-food > div.container-about-food > div.name-food > span {
+	font-size: large;
+	font-family: cursive;
+	color: rgba(255, 255, 255, 1);
+}
+
+div.cart-container-food > div.container-about-food > div.count-of-food {
+	align-self: flex-end;
+	width: 150px;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.cart-container-food > div.container-about-food > div.count-of-food > span {
+	font-size: medium;
+	font-family: cursive;
+	color: rgba(255, 255, 255, 1);
+}
+
+div.cart-container-food > div.container-about-food > div.total-price {
+	align-self: flex-end;
+	width: 150px;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.cart-container-food > div.container-about-food > div.total-price > span {
+	font-size: medium;
+	font-family: cursive;
+	color: rgba(255, 255, 255, 1);
+}
+
+div.cart-container-food > button {
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 2em;
+	padding:0 15px;
+	color: rgba(255, 255, 255, 1);
+	border-color: rgba(255, 255, 255, 1);
+	border-style: solid;
+	/*border-radius: 10px; */
+	align-self: center;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.cart-container-food > button:hover {
+	background-color: rgba(255, 255, 255, 1);
+	color: rgba(0, 0, 0, 1);
+	cursor: pointer;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.cart-container-confirm {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;	
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 20px 20px 0;
+    width: 97%;
+
+}
+
+div.cart-container-confirm > div.container-clear {
+	margin-left: 20px;
+	width: 173px;
+} 
+
+div.cart-container-confirm > div.container-clear > button {
+	display: none;
+	background-color: rgba(0, 0, 0, 0);
+	font-size: medium;
+	font-family: cursive;
+	padding: 5px 15px;
+	color: rgba(255, 255, 255, 1);
+	border-color: rgba(255, 255, 255, 1);
+	border-style: solid;
+	/*border-radius: 5px; */
+	align-self: center;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.cart-container-confirm > div.container-clear > button:hover {
+	background-color: rgba(255, 255, 255, 1);
+	color: rgba(0, 0, 0, 1);
+	cursor: pointer;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.cart-container-confirm > div.container-total-price {
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+div.cart-container-confirm > div.container-total-price > span {
+	font-size: medium;
+	font-family: cursive;
+	color: rgba(255, 255, 255, 1);
+}
+
+div.cart-container-confirm > div.container-total-price > span.span-total-price {
+	margin-left: 10px;
+}
+
+div.cart-container-confirm > div.container-confirm-order > button {
+	background-color: rgba(0, 0, 0, 0);
+	font-size: medium;
+	font-family: cursive;
+	padding: 5px 15px;
+	color: rgba(255, 255, 255, 1);
+	border-color: rgba(255, 255, 255, 1);
+	border-style: solid;
+	/*border-radius: 5px; */
+	align-self: center;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.cart-container-confirm > div.container-confirm-order > button:hover {
+	background-color: rgba(255, 255, 255, 1);
+	color: rgba(0, 0, 0, 1);
+	cursor: pointer;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+::-webkit-scrollbar-button {
+	background-image: url('');
+	background-repeat: no-repeat;
+	width: 5px;
+	height: 0px
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0.7); 
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow:0px 0px 5px #000 inset; 
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: rgba(149, 6, 196, 0.8);
+	background-image: url('https://yraaa.ru/_pu/24/59610063.png'); 
+	background-position: center; 
+	background-repeat: no-repeat;
+}
+
+::-webkit-resizer{
+	background-image: url('');
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 0px
+}
+
+::-webkit-scrollbar{
+	width: 11px;
+}
+
+

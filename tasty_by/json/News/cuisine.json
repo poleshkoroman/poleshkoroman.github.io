@@ -1,0 +1,10 @@
+[
+	{
+		"name" : "Европейская",
+		"pathtofood" : "json/News/european.json"
+	},
+	{
+		"name" : "Итальянская",
+		"pathtofood" : "json/News/italian.json"
+	}
+]

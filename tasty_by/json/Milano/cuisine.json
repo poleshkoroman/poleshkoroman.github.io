@@ -1,0 +1,10 @@
+[
+	{
+		"name" : "Европейская",
+		"pathtofood" : "json/Milano/european.json"
+	},
+	{
+		"name" : "Итальянская",
+		"pathtofood" : "json/Milano/italian.json"
+	}
+]

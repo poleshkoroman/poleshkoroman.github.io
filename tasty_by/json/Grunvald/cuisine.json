@@ -1,0 +1,10 @@
+[
+	{
+		"name" : "Европейская",
+		"pathtofood" : "json/Grunvald/european.json"
+	},
+	{
+		"name" : "Беларуская",
+		"pathtofood" : "json/Grunvald/belarussian.json"
+	}
+]

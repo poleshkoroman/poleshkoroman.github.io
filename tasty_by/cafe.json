@@ -1,0 +1,47 @@
+[
+	{	
+		"id" : 0,
+		"name" : "La Crête d’Or",
+		"locate" : "Ленин пр. 3",
+		"pathtocuisine" : "json/LaCreteDOr/cuisine.json",
+		"rating" : 0,
+		"phone" : "+375 29 106-00-22",
+		"image" : "css/img/cafe/image0.jpg"
+	},
+	{	
+		"id" : 1,
+		"name" : "News CAFE",
+		"locate" : "ул. Карла Маркса 34",
+		"pathtocuisine" : "json/News/cuisine.json",
+		"rating" : 0,
+		"phone" : "+375 29 103-11-11",
+		"image" : "css/img/cafe/image1.jpg"
+	},
+	{	
+		"id" : 2,
+		"name" : "Грюнвальд Кафе",
+		"locate" : "ул. Карла Маркса 19",
+		"pathtocuisine" : "json/Grunvald/cuisine.json",
+		"rating" : 0,
+		"phone" : "+375 29 177-56-90",
+		"image" : "css/img/cafe/image2.jpg"
+	},
+	{	
+		"id" : 3,
+		"name" : "Union Coffee",
+		"locate" : "ул. Янки Купалы 17",
+		"pathtocuisine" : "json/Union/cuisine.json",
+		"rating" : 0,
+		"phone" : "+375 29 615-13-13",
+		"image" : "css/img/cafe/image3.jpg"
+	},
+	{	
+		"id" : 4,
+		"name" : "Milano Cafe",
+		"locate" : "улица Володарского 19",
+		"pathtocuisine" : "json/Milano/cuisine.json",
+		"rating" : 0,
+		"phone" : "+375 44 762-11-11",
+		"image" : "css/img/cafe/image4.jpg"
+	}
+]

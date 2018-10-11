@@ -1,0 +1,10 @@
+[
+	{
+		"name" : "Европейская",
+		"pathtofood" : "json/LaCreteDOr/european.json"
+	},
+	{
+		"name" : "Французкая",
+		"pathtofood" : "json/LaCreteDOr/french.json"
+	}
+]

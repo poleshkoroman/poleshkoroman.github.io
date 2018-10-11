@@ -1,0 +1,310 @@
+div.content {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 80vh;
+	width: 100%; 
+	height: auto;
+	position: absolute;
+	top: 90px;
+	left: 0px;
+}
+
+div.about-button-back {
+	align-self: flex-start;
+	margin-left: 70px;
+}
+
+div.about-button-back > i {
+	font-size: 2em;
+	color: rgba(0, 0, 0, 0.7); 
+	transition: color 0.5s; 
+}
+
+div.about-button-back > i:hover {
+	cursor: pointer;
+	color: rgba(149, 6, 196, 1);
+	transition: color 0.5s;
+}
+
+div.about-content {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 90%;	
+	height: 90%;
+	background-color: rgba(0, 0, 0, 0.7);
+	/*border-radius: 10px;*/
+	box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+div.about-top-part {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+div.about-top-part > div.image {
+	background-size: auto 110%;
+    background-position: center;
+    /*border-radius: 10px;*/
+    width: 40%;
+    height: 35vh;
+    align-self: flex-start; 	
+    margin: 30px 15px auto 30px;
+ 	transition: background-size 0.1s;
+ 	box-shadow: 0px 0px 10px #000; 
+ 	
+}
+
+div.about-top-part > div.image:hover {
+ 	transition: background-size 0.1s;
+ 	background-size: auto 130%;
+}
+
+div.about-top-part > div.info {
+	font-family: cursive;
+	color: floralwhite;
+	border-style: solid;
+	border-color: floralwhite;
+	/*border-radius: 10px;*/
+	min-height: 35vh;
+	align-self: stretch;		
+	max-width: 50%;
+	margin: 30px 30px auto 15px;
+	text-align: justify;
+	text-indent: 2em;
+	display: none;
+}
+
+div.about-top-part > div.info > div.title {
+	padding: 10px;
+	text-align: center;
+}
+
+div.about-top-part > div.info > div.title > span {
+	font-size: x-large;
+}
+
+div.about-top-part > div.info > div.about {
+	padding: 10px;
+}
+
+div.about-bottom-part {
+	font-family: cursive;
+	color: floralwhite;
+	font-size: medium;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-self: flex-end;
+	margin: 30px;
+}
+
+div.about-bottom-part > div.container-price {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	align-self: center;
+	margin: auto auto 10px auto;
+	width: 100%;
+}
+
+div.about-bottom-part > div.container-count {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	align-self: center;
+	margin: auto auto 10px auto;
+}
+
+div.about-bottom-part > div.container-count > div.count {
+	margin-right: 2em;
+}
+
+div.about-bottom-part > div.container-count > div.inc-dec > input {
+	width: 5em;
+	background-color: rgba(255, 255, 255, 0);
+	border-color: floralwhite;
+	border-style: solid;
+	/*border-radius: 5px;*/
+	color: floralwhite;
+	text-align: center;
+	font-size: 1em;
+}
+
+div.about-bottom-part > div.container-count > div.inc-dec > button {
+	background-color: rgba(255, 255, 255, 0);
+	border-color: floralwhite;
+	border-style: solid;
+	/*border-radius: 5px;*/
+	color: floralwhite;
+	text-align: center;	
+	width: 30px;
+	font-size: 1em;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.about-bottom-part > div.container-count > div.inc-dec > button:hover {
+	background-color: rgba(255, 255, 255, 1);
+	border-color: floralwhite;
+	border-style: solid;
+	/*border-radius: 5px;*/
+	color: black;
+	text-align: center;	
+	cursor: pointer;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.about-bottom-part > div.container-total-price {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	align-self: center;
+	margin: auto auto 10px auto;
+	width: 100%;
+}
+
+div.about-bottom-part > div.container-total-price > div.text-total-price {
+	margin-right: 7em;
+}
+
+div.about-bottom-part > div.add-on-cart {
+	align-self: flex-end;
+}
+
+div.about-bottom-part > div.add-on-cart > button {
+	background-color: rgba(255, 255, 255, 0);
+	border-color: floralwhite;
+	border-style: solid;
+	/*border-radius: 5px;*/
+	color: floralwhite;
+	text-align: center;	
+	width: 150px;
+	height: 40px;
+	font-family: cursive;
+	font-size: 1em;
+	transition: background-color 0.5s,
+				color 0.5s;	
+}
+
+div.about-bottom-part > div.add-on-cart > button:hover {
+	background-color: rgba(255, 255, 255, 1);
+	border-color: floralwhite;
+	border-style: solid;
+	/*border-radius: 5px;*/
+	color: rgba(0, 0, 0, 1);
+	text-align: center;	
+	cursor: pointer;
+	transition: background-color 0.5s,
+				color 0.5s;
+}
+
+div.content > div.container-succesfull {
+	transition: opacity 0.5s;
+	opacity: 0;
+    width: 25%;
+    height: auto;
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70vh;
+    left: 10%;
+    /*border-radius: 20px;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+div.content > div.container-succesfull.on {
+	transition: opacity 0.5s;
+	opacity: 1;
+    width: 25%;
+    height: auto;
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70vh;
+    left: 10%;
+    /*border-radius: 20px;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+div.content > div.container-succesfull > div.text-succesfull {
+	text-align: center;
+}
+
+div.content > div.container-succesfull > div.text-succesfull > span {
+	color: floralwhite;
+    font-family: cursive;
+    font-size: medium;
+}
+
+div.content > div.container-succesfull > div.image-succesfull > i {
+	color: rgba(149, 6, 196, 0.8);
+    font-size: 2em;
+}
+
+
+
+
+
+
+
+
+
+/*RESET*/
+
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, all-priceary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}*/
