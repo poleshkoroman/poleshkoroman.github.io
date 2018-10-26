@@ -1,0 +1,435 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+
+body, ul
+	margin: 0;
+	padding: 0;
+
+button, button:hover, button:focus, button:active
+	outline: 0;
+
+input, input:hover, input:focus, input:active
+	outline: 0;
+
+.row
+	margin-left: 0;
+	margin-right: 0;
+
+header
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	.navigator
+		background-color: #fff;
+		width: 100%
+		height: 80px;
+		margin-top: 30px;
+		-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+		div.row
+			height: 100%
+			h3
+				color: $accent;
+				margin: auto 0;
+				font-family: $raleway;
+			.full-menu
+				margin: auto 0;
+				padding: 0; 
+				text-align: right;
+				li
+					list-style-type: none;
+					display: inline-block;
+					a
+						color: $text;
+						text-decoration: none;
+						padding: 12px;
+						text-transform: uppercase;
+						border: none;
+						-webkit-transition: color .2s;
+						-o-transition: color .2s;
+						transition: color .2s;
+						font-size: 18px;
+						&:hover
+							color: $accent;
+							-webkit-transition: color .2s;
+							-o-transition: color .2s;
+							transition: color .2s;
+			.dropdown
+				display: none;
+								
+	.container
+		h3, h4, ul>li, button>a
+			color: #fff			
+		button
+			background: $accent;
+			border: none;
+		h3
+			margin-top: 170px;
+			font-size: 30px;
+			font-family: $raleway;
+			font-weight: bold;
+		h4
+			font-family: $opensans;
+			font-weight: 500;
+		ul
+			margin-top: 55px;
+			margin-left: 17px;
+			font-family: $opensans;
+			font-weight: normal;
+			font-size: 15px;
+		button.dwnld
+			margin-top: 80px;
+			margin-bottom: 150px;
+			padding: 5px 25px;
+			border: 3px solid $accent
+			border-radius: 5px;
+			-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			a
+				text-decoration: none;
+				font-size: 18px;
+			&:hover
+				background-color: rgba(255, 255,255, 0);
+				border: 3px solid $accent
+				-webkit-transition: background-color 0.2s;
+				-o-transition: background-color 0.2s;
+				transition: background-color 0.2s;
+			img
+				margin-right: 10px;
+		.img-contain
+			text-align: center;
+			img.doulbe-phone
+				max-height: 500px;
+				height: auto;	
+
+section#features
+	.features-title
+		h2
+			font-family: $raleway;
+			font-weight: bold;
+			margin-top: 90px;
+			color: $accent;
+			text-transform: uppercase;
+			text-align: center;
+	.features-description
+		p
+			font-family: $opensans;
+			font-weight: normal;
+			margin-top: 50px;
+			color: $text;
+			text-align: center;
+	.container-info
+		margin-top: 90px;
+		.info
+			margin-top: 70px;
+			h4
+				font-family: $raleway;
+				font-weight: bold;
+			p
+				font-family: $opensans;
+				font-size: 13px;
+			.icon
+				width: 10px;
+				height: 25px;
+		.contain-phone
+			text-align: center;
+			margin-bottom: 115px;
+			.alone-mobile
+				max-height: 600px;
+				height: auto;
+
+section#watch-the-video
+	background-color: #31d4e7;
+	.video-info, .video
+		margin: 70px auto;
+	.video-info
+		h1
+			font-family: $raleway;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+		p
+			margin-top: 25px;
+			font-family: $opensans;
+			font-weight: normal;
+			color: #fff;
+			font-size: 14px;
+		img
+			margin-right: 15px;
+			margin-top: 25px;
+			-webkit-transition: transform .2s;
+			-o-transition: transform .2s;
+			transition: transform .2s;
+			&:hover
+				-webkit-transform: scale(1.1, 1.1);
+				-ms-transform: scale(1.1, 1.1);
+				-o-transform: scale(1.1, 1.1);
+				transform: scale(1.1, 1.1);
+				-webkit-transition: transform .2s;
+				-o-transition: transform .2s;
+				transition: transform .2s;
+	.video
+		text-align: center;
+		iframe
+			-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+section#our-team
+	.container
+		padding: 0;
+		.team-tittle
+			margin-top: 90px;
+			h2
+				text-align: center;
+				text-transform: uppercase;
+				color: $accent;
+				font-family: #raleway;
+				font-weight: bold;
+		.team-description
+			margin-top: 50px;
+			p
+				text-align: center;
+				color: $text;
+				font-family: $opensans;
+				font-weight: 500;
+				font-size: 14px;
+		.cart
+			margin-top: 100px;
+			text-align: center;
+			padding: 0;
+			h4
+				margin-top: 20px;
+				font-family: $opensans;
+				font-weight: 500;
+			p
+				font-family: $opensans;
+				font-weight: normal;
+				color: #2f3f34
+				font-size: 10px;
+			.img
+				text-align: center;
+				margin: auto;
+				width: 270px;
+				height: 300px;
+				background-size: cover;
+				background-position: center;
+				.img-overlay
+					width: 100%;
+					height: 100%;
+					p
+						display: none;
+					.person-contact
+						display: none;
+			&:hover
+				h4
+					color: $accent
+					-webkit-transition: color 0.2s;
+					-o-transition: color 0.2s;
+					transition: color 0.2s;
+				.img-overlay
+    				background: rgba(14,180,147,0.5);
+   					width: 100%;
+    				height: 100%;
+    				-webkit-transition: background .2s;
+    				-o-transition: background .2s;
+    				transition: background .2s;
+    				.person-contact
+    					width: 100%;
+    					display: flex
+    					.contact
+    						text-align: center;
+    						img
+    							background: rgba(18,117,98,0.8);
+    							padding: 5px;
+    							-webkit-transition: transform .2s;
+	    						-o-transition: transform .2s;
+	    						transition: transform .2s;
+    							&:hover
+    								-webkit-transform: scale(1.2, 1.2);
+	    							-ms-transform: scale(1.2, 1.2);
+	    							-o-transform: scale(1.2, 1.2);
+	    							transform: scale(1.2, 1.2);
+	    							-webkit-transition: transform .2s;
+	    							-o-transition: transform .2s;
+	    							transition: transform .2s;
+
+    				p
+    					margin-bottom: 0;
+    					margin-top: 20px;
+    					display: block;
+    					text-align: center;
+    					font-family: $opensans;
+    					color: #fff
+    					font-size: 16px;
+    					span
+    						font-family: $opensans;
+    						font-weight: 500;
+    						color: #fff
+    						font-size: 16px;
+    				
+section#feedback
+	margin-bottom: 100px;
+	.feedback-tittle
+		h2
+			margin-top: 90px;
+			text-align: center;
+			text-transform: uppercase;
+			font-family: $raleway;
+			font-weight: bold;
+			color: $accent;
+	.fotorama
+		text-align: center;
+		/*width: 100%;*/
+		/*height: 100vh;*/
+		.feedback-customer
+			margin-top: 65px;
+			.customer-container
+				text-align: center;
+				.customer-name
+					margin-top: 30px;
+					margin-bottom: 0;
+					font-family: $opensans;
+					font-weight: 500;
+				.customer-position
+					font-family: $opensans;
+					font-weight: 500;
+					color: $text;
+					font-size: 12px;
+		.feedback-content
+			margin-top: 100px;
+			text-align: center;
+			p
+				font-family: $opensans;
+				color: $text
+				font-size: 15px;
+
+footer
+	background-size: cover;
+	background-position: center;
+	.contact-tittle
+		h2
+			text-transform: uppercase;
+			color: #fff;
+			text-align: center;
+			margin-top: 90px;
+			font-family: $raleway;
+			font-weight: bold;
+	.contact-content
+		margin-top: 100px;
+		h3
+			font-family: $raleway;
+			font-weight: normal;
+			color: #fff;
+			font-size: 20px;
+		p
+			font-family: $opensans;
+			font-weight: normal;
+			color: #979797;
+			font-size: 13px;
+		a
+			margin-bottom: 10px;
+		.icons
+			margin-top: 40px;
+			img
+				margin-right: 10px;
+				-webkit-transition: transform .2s;
+				-o-transition: transform .2s;
+				transition: transform .2s;
+				&:hover
+					-webkit-transform: scale(1.2, 1.2);
+					-ms-transform: scale(1.2, 1.2);
+					-o-transform: scale(1.2, 1.2);
+					transform: scale(1.2, 1.2);
+					-webkit-transition: transform .2s;
+					-o-transition: transform .2s;
+					transition: transform .2s;
+		a
+			text-decoration: none;
+			font-family: $opensans;
+			font-weight: normal;
+			color: #979797
+		form
+			width: 100%;
+			.input-container
+				input
+					padding: 5px 10px;
+					border-radius: 5px;
+					border: 0;
+					font-family: $opensans;
+			textarea
+				padding: 5px 10px;
+				border-radius: 5px;
+				border: 0;
+				font-family: $opensans;
+				margin-top: 30px;
+				width: 100%
+				height: 180px;
+			.button-container
+				margin: 30px auto;
+				button
+					background: #31d4e7;
+					border: 3px solid #31d4e7;
+					border-radius: 3px;
+					padding: 10px 20px;
+					color: #fff;
+					text-transform: uppercase;
+					-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+					box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+					font-family: $opensans;
+					&:hover
+						background: rgba(0, 0, 0, 0);
+						-webkit-transition: background .2s;
+						-o-transition: background .2s;
+						transition: background .2s;
+
+
+	
+
+
+
+
+
+
+
+/*======Fotorama Customizing=======*/
+
+.fotorama__nav__frame.fotorama__active .fotorama__dot
+	width: 7px !important
+	height: 7px !important
+	background-color: $accent;
+	border: 0 !important
+
+.fotorama__dot
+	background-color: #d4d3d4;
+	width: 7px !important
+	height: 7px !important
+	border: 0 !important
+	border-radius: 10px !important
+
+.fotorama__wrap
+	margin: auto;
+
+/*======Button Up========*/
+#back-top 
+	position: fixed;
+	bottom: 60px;
+	right: 3%;
+	a
+		z-index: 1000;
+		background: url("../img/icon/top.png") no-repeat;
+		width: 60px;
+		height: 60px;
+		display: block;
+		margin-bottom: 7px;
+
+
+
+
+
+
+
+
+
+@import "media" // Always at the end

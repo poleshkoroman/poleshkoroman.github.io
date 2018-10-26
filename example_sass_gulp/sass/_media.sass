@@ -1,0 +1,109 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	#watch-the-video
+		.video-info, .video
+			text-align: center;
+		.video
+			margin-top: 0 !important
+	#our-team
+		.cart
+			margin-top: 30px !important
+			margin-bottom: 30px !important;
+
+
+
+// ≥992px
++media-breakpoint-down(md)
+	#features
+		.container-info
+			margin-top: 0 !important;
+			margin-bottom: 60px;
+			.contain-phone
+				display: none;
+	#feedback
+		display: none;
+
+// ≥768px
++media-breakpoint-down(sm)
+	header
+		nav
+			.full-menu
+				display: none;
+			.dropdown
+				display: flex !important;
+				font-size: 40px;
+				color: $accent;
+				.dropdown-menu
+					text-transform: uppercase;
+					text-align: center;
+					margin-top: 10px;
+					margin-left: -100px;
+					height: 150px;
+					li
+						margin-bottom: 10px;
+						a
+							font-family: $opensans;
+							color: $text;
+
+		.container
+			.content
+				text-align: center;
+				li
+					list-style-type: none;
+			.img-contain
+				display: none;
+	#features
+		.icon
+			display: none;
+	#watch-the-video
+		.video
+			iframe
+				width: 400px; 
+				height: 224px;
+	#contacts
+		.contact-content
+			margin-top: 50px;
+			.contact-info
+				text-align: center;
+			.contact-sent-mail
+				margin-top: 20px;
+
+
+
+
+// ≥576px
++media-breakpoint-down(xs)
+	#watch-the-video
+		.video
+			iframe
+				width: 260px; 
+				height: 146px;
+	#contacts
+		.contact-content
+			margin-top: 50px;
+			.contact-info
+				text-align: center;
+			.contact-sent-mail
+				margin-top: 20px;
+
+
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)	
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
