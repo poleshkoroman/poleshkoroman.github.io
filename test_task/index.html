@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Planet Earth</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!--Font Awesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<!--Dropdown Menu-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+
+<body>
+	<header id="home">
+		<div class="container">
+			<div class="row high-line justify-content-between">
+				<div class="col-xl-4 col-sm-6 col-12 row left-part">
+					<p id="lang" class="col-6">Language: 
+						<select>
+							<option value="Eng">En</option>
+							<option value="Rus">Rus</option>
+						</select>
+					</p>
+					<p id="currency" class="col-6">Currency: 
+						<select>
+							<option value="Eur">Euro</option>
+							<option value="Usd">Usd</option>
+							<option value="Rub">Rub</option>
+						</select>
+					</p>
+				</div>
+				<div class="col-xl-3 col-sm-6 row right-part">
+					<p id="contact" class="col-6">Contact Us</p>
+					<p id="sign-in" class="col-6">Sign In</p>
+				</div>
+			</div>
+			<div class="row middle-line justify-content-between">
+				<div class="col-lg-1 col-2 text-center">
+					<img class="search img-responsive" src="img/search.png" alt="Иконка поиска">
+				</div>
+				<div class="col-lg-10 col-8 text-center">
+					<img class="logo img-responsive" src="img/logo.png" alt="Логотип">
+				</div>
+				<div class="col-lg-1 col-2 text-center">
+					<img class="cart img-responsive" src="img/cart.png" alt="Иконка корзины">
+					<div class="counter">
+						<p>0</p>
+					</div>
+					<div class="dropdown img-responsive">
+						<i class="dropdown-toggle fas fa-bars align-self-center" data-toggle="dropdown"></i>
+						<ul class="dropdown-menu">
+						  	<li><a href="#">Home</a></li>
+						   	<li><a href="#">Men</a></li>
+						   	<li><a href="#">Woman</a></li>
+						   	<li><a href="#">Sale</a></li>
+						   	<li><a href="#">Blog</a></li>
+						   	<li><a href="#">Cart (<span>0</span>)</a></li>
+						   	<li><a href="#">Contacts</a></li>
+						   	<li><a href="#">Sing In</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<nav class="row text-center">
+				<ul class="col-12 menu-list">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Men</a></li>
+					<li><a href="#">Woman</a></li>
+					<li><a href="#">Sale</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contacts</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section id="popular-product">
+		<div class="container">
+			<div class="row">
+				<h2 class="col-12 text-center align-items-start">Popular Product</h2>
+				<div class="col-lg-3 col-sm-6 col-12 cart">
+					<div class="img" style="background-image: url(img/1product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-not-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-not-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-not-active">€39.95</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-12 cart">
+					<div class="img" style="background-image: url(img/2product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-not-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-active">€39.95</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-12 cart">
+					<div class="img" style="background-image: url(img/3product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-not-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-not-active">€39.95</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-12 cart">
+					<div class="img" style="background-image: url(img/4product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-not-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-not-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-not-active">€39.95</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-12 cart bottom">
+					<div class="img" style="background-image: url(img/5product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-active">€39.95</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-12 cart bottom">
+					<div class="img" style="background-image: url(img/6product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-not-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-not-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-not-active">€39.95</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-12 cart bottom">
+					<div class="img " style="background-image: url(img/7product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-not-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-not-active">€39.95</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-12 cart bottom">
+					<div class="img" style="background-image: url(img/8product.png)">
+    					<div class="more-info row justify-content-center">
+    						<div class="info">
+								<div class="discount is-active">
+									<p>-20%</p>
+								</div>
+								<div class="collection is-not-active">
+									<p>New</p>
+								</div>
+							</div>
+    						<div class="col-12 quick-view">
+								<button><a href="#"></a>Quick view</button>
+							</div>
+							<div class="row color-picks">
+								<div class = "pick-black"></div>
+								<div class = "pick-blue"></div>
+								<div class = "pick-red"></div>
+							</div>
+    					</div>
+					</div>
+					<p id="tittle">Twill Short Hooded Trench</p>
+					<div class="price row justify-content-center">
+						<p id="price">€34.95</p>
+						<p id="price-without-discount" class="is-active">€39.95</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-12 first-col">
+					<div class="blouses row" style="background-image: url(img/blouses.png)">
+						<p class ="col-6 offset-6 title">Blouses</p>
+						<h3 class ="col-6 offset-6 name">Print Split-Neck<br> Blouse</h3>
+						<h4 class ="col-6 offset-6 price">€59.95</h4>
+					</div>
+					<div class="sale row" style="background-image: url(img/sale.png)">
+						<p class ="col-sm-6 offset-sm-6 col-12" >Sale end 15.04</p>
+						<h3 class ="col-sm-6 offset-sm-6 col-12i">Up to 20% off</h3>
+					</div>
+				</div>
+				<div class="col-sm-4 col-12 second-col text-center" style="background-image: url(img/skirt.png)">
+					<p id="tittle">A-Line Midi Skirt</p>
+					<button><a href="#">Shop now</a></button>					
+				</div>
+				<div class="col-sm-4 col-12 third-col ">
+					<div class="guide row text-center" style="background-image: url(img/guide.png)">
+						<p class ="col-12" >Style Guide</p>
+						<h3 class ="col-12">lookbook</h3>
+					</div>
+					<div class="shorts row" style="background-image: url(img/shorts.png)">
+						<p class ="col-6 offset-6 title">Shorts</p>
+						<h3 class ="col-6 offset-6 name">The Archive<br> re-issue Pleated</h3>
+						<h4 class ="col-6 offset-6 price">€34.95</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
