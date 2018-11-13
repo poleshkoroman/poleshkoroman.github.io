@@ -1,0 +1,193 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)	
+
+	header#home
+		.tittle
+			font-size: 145px !important;
+
+	section#your-projects
+		.inputs
+			text-align: center;
+			padding: 0;
+			padding-left: 32px;
+			margin-top: -7px;
+			input
+				width: 300px;
+				margin-top: 10px;
+				margin-right: 0;
+
+
+// ≥992px
++media-breakpoint-down(md)
+
+	header#home
+		nav
+			.logo, .social
+				display: none;
+			.menu
+				text-align: center !important;
+		.tittle
+			font-size: 125px !important;
+
+	section#posts
+		.post-1
+			.info
+				margin-top: 20px !important;
+			.content
+				margin-top: 10px !important;
+	section#your-projects
+		span
+			margin-top: -235px !important;
+		.inputs
+			text-align: center;
+			padding: 0;
+			padding-left: 32px;
+			margin-top: -7px;
+			input
+				width: 220px;
+				margin-top: 10px;
+				margin-right: 0;
+
+
+// ≥768px
++media-breakpoint-down(sm)
+
+	header#home
+		.tittle
+			font-size: 100px !important;
+
+	section#features
+		span
+			margin-top: -245px;
+
+	section#posts
+		.post-2
+			.info
+				margin-top: 20px !important;
+			.content
+				margin-top: 10px !important;
+
+	section#your-projects
+		.inputs
+			text-align: center;
+			padding: 0;
+			padding-left: 32px;
+			margin-top: -7px;
+			input
+				width: 100%;
+				margin-top: 10px;
+				margin-right: 0;
+
+
+
+
+// ≥576px
++media-breakpoint-down(xs)
+
+	header#home
+		nav
+			min-height: 112px !important;
+			height: auto !important;
+			.nav
+				list-style: none;
+				display: block !important;
+				padding: 0;
+				li
+					margin: auto !important;
+					width: 150px;
+					height: 45px !important;
+					overflow: hidden;
+					p
+						margin-top: 10px;
+						font-size: 25px;
+						text-transform: uppercase;
+						position: relative;
+					a
+						color: #fff;
+						font-size: 20px;
+						line-height: 2;
+						&:hover
+							color: $accent;
+							text-decoration: none;	
+					&:hover
+						margin-top: 30px !important;
+						height: auto !important;
+						
+
+
+
+
+			.menu
+				display: none;
+
+		.tittle
+			font-size: 45px !important;
+			letter-spacing: 0.5px !important;
+
+
+	section#features
+		h1
+			font-size: 25px;
+		span
+			margin-top: -220px;
+	section#something
+		.right
+			padding: 0;
+			padding-left: 15px;
+			margin-top: 0;
+	section#about
+		.content
+			.text
+				margin-right: 30px;
+			.features1
+				max-width: 240px;
+			.features2
+				max-width: 260px;
+			.features3
+				max-width: 280px;
+		.img
+			padding-left: 15px;;
+			img
+				max-width: 250px;
+
+	section#team
+		.row
+			margin-left: 0;
+			margin-right: 0;
+			.cart
+				padding-left: 15px;
+				padding-right: 15px;			
+
+	section#your-projects
+		h1
+			font-size: 22px;
+		span
+			margin-top: -225px !important;
+		.inputs
+			padding: 0;
+			padding-left: 32px;
+			margin-top: -7px;
+			input
+				margin-top: 10px;
+				margin-right: 0;
+
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

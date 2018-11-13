@@ -1,0 +1,559 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+#back-top 
+	position: fixed;
+	bottom: 60px;
+	right: 3%;
+	a
+		z-index: 1000;
+		background: url("../img/top.png") no-repeat;
+		width: 40px;
+		height: 40px;
+		display: block;
+		margin-bottom: 7px;
+
+button:hover, button:focus, button:active, button:visited
+	outline: none;
+
+a:hover, a:focus, a:active, a:visited
+	outline: none;
+
+input:hover, input:focus, input:active, input:visited
+	outline: none;
+
+textarea:hover, textarea:focus, textarea:active, textarea:visited
+	outline: none;
+
+header#home
+	.row
+		margin-left: 0;
+		margin-right: 0;
+		nav
+			padding-right: 0;
+			padding-left: 0;
+			height: 112px;
+			width: 100%;
+			border-bottom: 1px solid #757575;
+			.logo
+				height: 100%;
+				text-align: right;
+				padding-right: 0;
+				padding-left: 13.5%;
+				img
+					margin-top: 19px;
+					width: 75px;
+					height: 75px;
+			ul
+				margin: auto;
+				text-align: center;
+				li
+					height: 62px;
+					display: inline-block;
+					font-family: $gotham-font;
+					font-weight: 400;
+					color: #fff;
+					font-size: 17px;
+					margin-top: 48px;
+					padding: 0 16px;
+			.menu
+				margin: 0;
+				text-align: right;
+				padding-right: 0;
+				padding-left: 0;
+				li
+					letter-spacing: 0.5px;	
+					padding-right: 	12px;
+				li:hover
+					-webkit-transition: border-bottom .2s;
+					-moz-transition: border-bottom .2s;
+					-o-transition: border-bottom .2s;
+					transition: border-bottom .2s;
+					border-bottom: 5px solid $accent;
+			.nav
+				display: none;
+			.social
+				text-align: left;
+				padding-left: 34px;
+				margin: 0;
+				li
+					padding: 0 7.5px;
+					font-size: 15px;
+					-webkit-transform: scale(1, 1);
+					-moz-transform: scale(1, 1);
+					-ms-transform: scale(1, 1);
+					-o-transform: scale(1, 1);
+					transform: scale(1, 1);
+					-webkit-transition: transform .3s;
+					-moz-transition: transform .3s;
+					-o-transition: transform .3s;
+					transition: transform .3s;
+					&:hover
+						-webkit-transform: scale(1.2, 1.2);
+						-moz-transform: scale(1.2, 1.2);
+						-ms-transform: scale(1.2, 1.2);
+						-o-transform: scale(1.2, 1.2);
+						transform: scale(1.2, 1.2);
+						-webkit-transition: transform .3s;
+						-moz-transition: transform .3s;
+						-o-transition: transform .3s;
+						transition: transform .3s;
+		.tittle
+			margin-top: 200px;	
+			font-family: $gotham-font;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 145px;
+			letter-spacing: -7.5px;
+			padding-right: 25px;
+		p
+			margin-top: 100px;
+			font-family: $gotham-font;
+			font-size: 12px;
+			color: #fff;
+		.down
+			margin-bottom: 100px;
+			padding-right: 24px;
+			img
+				height: 65px;
+				width: 65px;
+section#features
+	background-color: $accent;
+	h1
+		margin-top: 152px;
+		font-family: $gotham-font;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 35px;
+		z-index: 2;
+	span
+		color: #3c8daf;
+		font-family: $roboto-font;
+		font-weight: 800;
+		font-size: 235px;
+		text-transform: uppercase;
+		margin-top: -215px;
+		z-index: 1;
+	.cart
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: -22px;
+		.features
+			margin-bottom: 102px;
+			padding: 0;
+			img
+				width: 127px;
+				height: 127px;
+			h4
+				margin-top: 16px;
+				font-family: $gotham-font;
+				font-weight: 400;
+				text-transform: uppercase;
+				font-size: 18px;
+				color: #fff;
+				letter-spacing: -0.5px;
+			p
+				margin-top: 20px;
+				font-family: $gotham-font;
+				font-size: 15px;
+				color: #fff;
+				font-weight: 300;
+				letter-spacing: -0.5px;
+
+section#posts
+	.first-line
+		margin-left: 0;
+		margin-right: 0;
+		.post-1
+			width: 50%;
+			padding-left: 13.3%;
+			padding-right: 8%;
+			background-color: #222222;
+			.info
+				display: flex;
+				font-family: $gotham-font;
+				font-weight: book;
+				color: #fff;
+				margin-top: 73px;
+				font-size: 13px;
+				word-wrap: break-word;
+				span
+					margin: 0 8px;
+			.title
+				word-wrap: break-word;
+				max-width: 440px;
+				font-family: $gotham-font;
+				font-weight: 400;
+				color: #fff;
+				margin-top: -10px;
+				font-size: 23.5px;
+				text-transform: uppercase;
+			.content
+				font-family: $gotham-font;
+				color: #fff;
+				max-width: 440px;
+				word-wrap: break-word;
+				margin-top: 27px;
+				line-height: 1.5;
+				font-size: 15px;
+		.img
+			width: 50%;
+			height: 425px;
+			background-size: cover;
+			background-position: center;
+	.second-line
+		margin-right: 0;
+		margin-left: 0;
+		.post-2
+			width: 50%;
+			padding-left: 75px;
+			.info
+				display: flex;
+				font-family: $gotham-font;
+				font-weight: book;
+				color: #000;
+				margin-top: 95px;
+				font-size: 13px;
+				word-wrap: break-word;
+				span
+					margin: 0 8px;
+			.title
+				word-wrap: break-word;
+				max-width: 440px;
+				font-family: $gotham-font;
+				font-weight: 400;
+				color: #000;
+				margin-top: -10px;
+				font-size: 23.5px;
+				text-transform: uppercase;
+			.content
+				font-family: $gotham-font;
+				color: #000;
+				max-width: 440px;
+				word-wrap: break-word;
+				margin-top: 27px;
+				line-height: 1.5;
+				font-size: 15px;
+		.img
+			width: 50%;
+			height: 450px;
+			background-size: cover;
+			background-position: center;
+				
+section#blogs
+	h1
+		margin-top: 140px;
+		font-family: $gotham-font;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #000;
+		font-size: 35px;
+		z-index: 2;
+	span
+		color: #d7d7d7;
+		font-family: $roboto-font;
+		font-weight: 800;
+		font-size: 235px;
+		text-transform: uppercase;
+		margin-top: -215px;
+		z-index: 1;	
+	h2
+		margin-top: -59px;
+		font-family: $gotham-font;
+		font-size: 29px;
+		font-weight: 200;
+		letter-spacing: -0.2px;
+	.cart
+		padding: 0;
+		margin-top: 50px;
+		.blog
+			padding-left: 0;
+			padding-right: 0;
+			margin-bottom: 30px;
+			img
+				width: 260x;
+				height: 267px;
+			h4
+				margin-top: 35px;
+				text-transform: uppercase;
+				font-family: $gotham-font;
+				font-weight: 400;
+				font-size: 18px;
+				letter-spacing: -0.9px;
+				color: $accent;
+			p
+				margin: auto;
+				max-width: 245px;
+				word-wrap: break-word;
+				margin-top: 11px;
+				font-family: $gotham-font;
+				line-height: 1.45; 
+				font-size: 16px;
+				letter-spacing: -1.2px;
+
+section#something
+	background: $accent;
+	margin-top: 70px;
+	.left, .right
+		margin-top: 105px;
+		display: flex;
+		-webkit-flex-direction: row;
+		-moz-flex-direction: row;
+		-ms-flex-direction: row;
+		-o-flex-direction: row;
+		flex-direction: row;
+		p
+			margin-top: -5px;
+			margin-left: 25px;
+			margin-bottom: 145px;
+			font-family: $gotham-font;
+			font-weight: 200;
+			font-size: 16px;
+			line-height: 1.4;
+			letter-spacing: -0.6px;
+			color: #fff;
+	.right
+		padding: 0;
+		padding-left: 30px;
+
+section#about
+	.img
+		margin-top: 95px;
+		margin-bottom: 93px;
+		padding-right: 0;
+		padding-left: 21px;
+		img
+			max-width: 370px;
+	.content
+		margin-top: 95px;
+		padding-right: 0;
+		padding-left: 25px;
+		h3
+			margin-top: 115px;
+			text-transform: uppercase;
+			font-family: $gotham-font;
+			color: #fff;
+			font-size: 24px;
+			font-weight: 400;
+		.text	
+			margin-top: 23px;
+			font-family: $gotham-font;
+			font-weight: 200;
+			color: #fff;
+			font-size: 15px;
+			max-width: 450px;
+			letter-spacing: -0.4px;
+		.features1
+			margin-top: 62px;
+			text-transform: uppercase;
+			font-family: $gotham-font;
+			background: $accent;
+			color: #fff;
+			padding: 7px 15px;
+			font-size: 15px;
+			letter-spacing: -0.4px;
+			max-width: 350px;
+		.features2
+			margin-top: 23px;
+			text-transform: uppercase;
+			font-family: $gotham-font;
+			background: $accent;
+			color: #fff;
+			padding: 7px 15px;
+			font-size: 15px;
+			letter-spacing: -0.4px;
+			max-width: 379px;
+		.features3
+			margin-top: 22px;
+			text-transform: uppercase;
+			font-family: $gotham-font;
+			background: $accent;
+			color: #fff;
+			padding: 7px 15px;
+			font-size: 15px;
+			letter-spacing: -0.4px;
+			max-width: 406px;
+
+section#team
+	.container
+		padding-left: 0;
+		padding-right: 0;
+		h1
+			margin-top: 120px;
+			font-family: $gotham-font;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: #000;
+			font-size: 35px;
+			z-index: 2;
+			letter-spacing: 1px;
+			padding-left: 24px;
+		span
+			color: #d7d7d7;
+			font-family: $roboto-font;
+			font-weight: 800;
+			font-size: 235px;
+			text-transform: uppercase;
+			margin-top: -215px;
+			z-index: 1;	
+			padding-left: 24px;
+		h2
+			margin-top: -34px;
+			font-family: $gotham-font;
+			font-size: 29px;
+			font-weight: 200;
+			letter-spacing: -0.2px;
+			padding-left: 24px;
+		.cart
+			margin-top: 40px;
+			padding-left: 30px;
+			padding-right: 0;
+			.person
+				padding-left: 0;
+				padding-right: 0;
+				img
+					margin-top: 10px;
+					max-width: 257px;
+				.name
+					text-transform: uppercase;
+					color: $accent;
+					margin-top: 10px;
+					font-family: $gotham-font;
+					font-weight: 400;
+					font-size: 20px;
+				.position
+					font-family: $gotham-font;
+					font-weight: 400;
+					font-size: 15px;
+					margin-top: -10px;
+				&:hover
+					-webkit-transition: box-shadow .3s;
+					-moz-transition: box-shadow .3s;
+					-o-transition: box-shadow .3s;
+					transition: box-shadow .3s;
+					-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+					-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+					-o-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+					box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+
+section#your-projects
+	margin-top: 35px;
+	h1
+		margin-top: 200px;
+		font-family: $gotham-font;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 34px;
+		z-index: 2;
+		letter-spacing: 0.7px;
+		padding-left: 14px;
+	span
+		color: rgba(255, 255, 255, 0.2);
+		font-family: $roboto-font;
+		font-weight: 800;
+		font-size: 230px;
+		text-transform: uppercase;
+		margin-top: -215px;
+		z-index: 1;	
+		padding-left: 24px;
+	.inputs
+		padding: 0;
+		padding-left: 32px;
+		margin-top: -7px;
+		input
+			background: rgba(0, 0, 0, 0);
+			width: 350px;
+			height: 45px;
+			border: 1.5px solid #fff;
+			font-family: $gotham-font;
+			font-weight: 200;
+			color: #fff;
+			padding-left: 20px;
+			margin-right: 10px;
+			&:last-of-type
+				margin-right: 0;
+	.textarea
+		textarea
+			margin-top: 36px;
+			background: rgba(0, 0, 0, 0);
+			border: 1.5px solid #fff;
+			font-family: $gotham-font;
+			font-weight: 200;
+			color: #fff;
+			padding: 10px 20px;
+			width: 100%;
+			max-height: 144px;
+			height: auto;
+	.button
+		margin-top: 38px;
+		margin-bottom: 95px;
+		button
+			background: $accent;
+			-webkit-transition: background .2s;
+			-moz-transition: background .2s;
+			-o-transition: background .2s;
+			transition: background .2s;
+			color: #fff;
+			font-family: $gotham-font;
+			font-weight: 400;
+			font-size: 24px;
+			border: 2px solid $accent;
+			text-transform: uppercase;
+			padding: 10px 70px;
+			letter-spacing: 0.5px;
+			&:hover
+				-webkit-transition: background .2s;
+				-moz-transition: background .2s;
+				-o-transition: background .2s;
+				transition: background .2s;
+				background: rgba(0, 0, 0, 0);
+				color: #fff;
+				border: 2px solid #fff;
+
+footer
+	background: #222222;
+	a
+		margin-top: 40px;
+		margin-bottom: 40px;
+		color: #fff;
+		-webkit-transition: color .2s;
+		-o-transition: color .2s;
+		transition: color .2s;
+		font-family: $gotham-font;
+		font-weight: 200;
+		&:hover
+			text-decoration: none;
+			color: $accent;
+			-webkit-transition: color .2s;
+			-o-transition: color .2s;
+			transition: color .2s;
+	.mail
+		text-align: left;
+	.tel
+		text-align: right;
+
+
+
+
+@import "media" // Always at the end
