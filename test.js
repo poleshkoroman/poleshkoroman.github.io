@@ -1,5 +1,5 @@
 (function() {
-    var man = { name: "leha" };
+    var man = 'leha';
 
 	return module.exports.man = man;    
 })();
