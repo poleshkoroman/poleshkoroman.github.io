@@ -9,9 +9,9 @@
 // @match        https://vk.com/audios194032004
 // ==/UserScript==
 
-var inline_src = (<><![CDATA[
+import App from '../my_projects/smart_house_v0.0.1/src/App';
 
-	import App from '../my_projects/smart_house_v0.0.1/src/App';
+var inline_src = (<><![CDATA[
     alert("kek");
 	let click = new Event('click');
 	alert(recognizer);
