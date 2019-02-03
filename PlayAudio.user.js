@@ -10,7 +10,8 @@
 // ==/UserScript==
 
 var inline_src = (<><![CDATA[
-    alert("kek");
+	import * from '../my_projects/smart_house_v0.0.1/src/App';
+    alert(recognizer);
 	let click = new Event('click');
 	document.getElementsByClassName('_audio_row__play_btn')[0].dispatchEvent(click);
 
