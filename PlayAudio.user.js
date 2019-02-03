@@ -14,6 +14,7 @@ var inline_src = (<><![CDATA[
 	import App from '../my projects/smart_house_v0.0.1/src/App';
     	
 	let click = new Event('click');
+	alert(recognizer);
 	document.getElementsByClassName('_audio_row__play_btn')[0].dispatchEvent(click);
 
 ]]></>).toString();
