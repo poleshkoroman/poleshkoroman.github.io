@@ -12,7 +12,7 @@
 var inline_src = (<><![CDATA[
     
 	let click = new Event('click');
-	document.getElementsByClassName('blind_label _audio_row__play_btn')[0].dispatchEvent(click);
+	document.getElementsByClassName('_audio_row__play_btn')[0].dispatchEvent(click);
 
 ]]></>).toString();
 var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
