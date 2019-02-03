@@ -1,8 +1,3 @@
-var app = function() {
-	var obj = {
-		name : "Леха"
-	}
-	return obj;
-}
+var man = { name: "leha" };
 
-module.exports = app;
+module.exports.man = man;
