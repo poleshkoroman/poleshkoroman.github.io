@@ -1,3 +1,5 @@
-var man = { name: "leha" };
+(function() {
+    var man = { name: "leha" };
 
-module.exports.man = man;
+	return module.exports.man = man;    
+})();
