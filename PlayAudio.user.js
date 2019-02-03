@@ -10,8 +10,9 @@
 // ==/UserScript==
 
 var inline_src = (<><![CDATA[
-    
-	location.reload();
+
+	import App from '../my projects/smart_house_v0.0.1/src/App';
+    	
 	let click = new Event('click');
 	document.getElementsByClassName('_audio_row__play_btn')[0].dispatchEvent(click);
 
