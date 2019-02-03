@@ -186,7 +186,7 @@
 		recognizer.start();	
 	};
 
-	document.addEventListener('DOMContentLoaded', () => {
+	document.addEventListener('DOMContentLoaded', function(){
 		recognizer.start();
 		speech();
 	  	recognizer.addEventListener('end', func);
