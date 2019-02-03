@@ -81,16 +81,15 @@
 	recognizer.interimResults = true;
 	recognizer.lang = 'ru-Ru';
 	
-	function speech(){
-		recognizer.onresult = function (event) {
-		    var result = event.results[event.resultIndex];
-		    if (result.isFinal) {
-		      alert('Вы сказали: ' + result[0].transcript);
-		    } 
-		};
-	}; 
+	recognizer.onresult = function (event) {
+	    var result = event.results[event.resultIndex];
+	    if (result.isFinal) {
+	    	alert('Вы сказали: ' + result[0].transcript);
+	    } 
+	};
 
-	console.log('kek');
-	speech();
+	var synth = window.speechSynthesis;
+	var utterance = new SpeechSynthesisUtterance('hello');
+	synth.speak(utterance);
 
 })();
