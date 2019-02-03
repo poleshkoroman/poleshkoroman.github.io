@@ -90,9 +90,7 @@
 		};
 	}; 
 
-	window.addEventListener('load', function(){
-		console.log('kek');
-		speech();
-	});
+	console.log('kek');
+	speech();
 
 })();
