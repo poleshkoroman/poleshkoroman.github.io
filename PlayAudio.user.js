@@ -6,7 +6,7 @@
 // @author       Roman Poleshko
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
-// @require		 App.jsx	
+// @require		 file:///E:/github_projects/my_projects/smart_house_v0.0.1/src/App/App.jsx	
 // @match        https://vk.com/audios194032004
 // ==/UserScript==
 
