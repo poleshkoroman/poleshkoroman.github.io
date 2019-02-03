@@ -14,6 +14,6 @@
 		recognizer.start();
 	};
 
-	setTimeout(init(), 2000);
+	setTimeout(init, 2000);
 
 })();
