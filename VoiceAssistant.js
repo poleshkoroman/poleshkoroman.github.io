@@ -172,7 +172,7 @@
 
 	function caseEvent (text) {
 		console.log(text);
-		for (var i = 0; i < data.lenght; i++) {
+		for (var i = 0; i < data.length; i++) {
 			var item = data[i];
 			if (item.questions === text) {
 				var synth = window.speechSynthesis;
