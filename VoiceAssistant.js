@@ -184,7 +184,7 @@
 			
 	};
 		
-	func() {
+	function func() {
 		recognizer.start();	
 	};
 
