@@ -172,14 +172,16 @@
 
 	function caseEvent (text) {
 		console.log(text);
-		data.forEach(function(item){
+		for (var i = 0; i < data.lenght; i++) {
+			var item = data[i];
 			if (item.questions === text) {
 				var synth = window.speechSynthesis;
 	  			var utterance = new SpeechSynthesisUtterance(item.answer);
 	  			synth.speak(utterance);
 		  		doSomething(item.do);
 			}
-		})
+		}
+			
 	};
 		
 	func() {
