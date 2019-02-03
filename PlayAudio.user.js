@@ -11,6 +11,7 @@
 
 var inline_src = (<><![CDATA[
     
+	location.reload();
 	let click = new Event('click');
 	document.getElementsByClassName('_audio_row__play_btn')[0].dispatchEvent(click);
 
