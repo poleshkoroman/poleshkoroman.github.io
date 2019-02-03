@@ -10,7 +10,10 @@
 // ==/UserScript==
 
 var inline_src = (<><![CDATA[
-    alert('hello');
+    
+	let click = new Event('click');
+	document.getElementsByClassName('audio_page_player_ctrl')[0].dispatchEvent(click);
+
 ]]></>).toString();
 var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
 eval(c.code);
