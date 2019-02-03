@@ -9,11 +9,6 @@
 	    } 
 	};
 
-	function init(){
-		console.log('microphone activated');
-		recognizer.start();
-	};
-
-	setTimeout(init, 2000);
+	recognizer.start();
 
 })();
