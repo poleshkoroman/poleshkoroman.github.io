@@ -15,22 +15,25 @@ var inline_src = (<><![CDATA[
 	// let click = new Event('click');
 	// document.getElementsByClassName('_audio_row__play_btn')[0].dispatchEvent(click);
 
-    let data = [
+	let main_data = [
 		{
 			questions: "Лёха",
 			answer: "kto eto?",
-			do: "again"
+			do: "login_again"
 		},
 		{
-			questions: "самка",
+			questions: "Рома",
 			answer: "priver dasha",
-			do: "again"
+			do: "status_ok"
 		},
 		{
-			questions: "самец",
+			questions: "Даша",
 			answer: "priver roma",
-			do: "again"
-		},
+			do: "status_ok"
+		}
+	];
+
+    let data = [
 		{
 			questions: "Здорово",
 			answer: "darov",
@@ -110,13 +113,22 @@ var inline_src = (<><![CDATA[
 		recognizer.onresult = (event) => {
 		    const result = event.results[event.resultIndex];
 		    if (result.isFinal) {
-		   		caseEvent(result[0].transcript, recognizer);
+		   		caseEvent(result[0].transcript, arr);
 			}
 	  	};
 	};
-	const caseEvent = (text) => {
-		console.log(text);
-		data.forEach((item) => {
+
+	const main_speech = () => {
+		recognizer.onresult = (event) => {
+		    const result = event.results[event.resultIndex];
+		    if (result.isFinal) {
+		   		caseEvent(result[0].transcript, main_data);
+			}
+	  	};
+	};
+
+	const caseEvent = (text, arr) => {
+		arr.forEach((item) => {
 			if (item.questions === text) {
 				const synth = speechSynthesis;
 	  			const utterance = new SpeechSynthesisUtterance(item.answer);
@@ -152,6 +164,14 @@ var inline_src = (<><![CDATA[
 				window.open("https:\/\/www.youtube.com/");
 				break;
 			}
+			case "login_again" : {
+				main_speech();
+				break;
+			}
+			case "status_ok" : {
+				speech();
+				break;
+			}
 		}
 	};
 		
@@ -159,10 +179,13 @@ var inline_src = (<><![CDATA[
 		recognizer.start();	
 	};
 
+	const lehaActinated = () => {
+		
+	}
 	
 	recognizer.start();
-	speech();
 	recognizer.addEventListener('end', func);
+	main_speech();
 
 ]]></>).toString();
 var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
