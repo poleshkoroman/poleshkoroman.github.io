@@ -115,8 +115,7 @@ var inline_src = (<><![CDATA[
 		}
 	]
 
-	let bool;
-	console.log(bool);
+	console.log(localStorage.getItem("weather"));
 
 	const speech = (array) => {
 		recognizer.onresult = (event) => {
@@ -163,7 +162,7 @@ var inline_src = (<><![CDATA[
 			}
 			case "weather" : {
 				window.open("https:\/\/www.gismeteo.by/");
-				bool = true;
+				localStorage.setItem("weather", "true");
 				break;
 			}
 			case "translate" : {
