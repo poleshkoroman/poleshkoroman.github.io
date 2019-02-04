@@ -94,7 +94,7 @@ var inline_src = (<><![CDATA[
 		},
 		{
 			questions: "выход",
-			answer: "leha deactived",
+			answer: "Aleksey deactivated",
 			do: "off"
 		},
 		{
