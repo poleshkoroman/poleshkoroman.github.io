@@ -105,6 +105,7 @@ var inline_src = (<><![CDATA[
 	  	};
 	};
 	const caseEvent = (text) => {
+		console.log(text);
 		data.forEach((item) => {
 			if (item.questions === text) {
 				const synth = speechSynthesis;
@@ -121,7 +122,8 @@ var inline_src = (<><![CDATA[
 				break;
 			}
 			case "music" : {
-				window.open("https:\/\/vk.com\/audios194032004");
+				let click = new Event("click");
+				document.getElementsByClassName("_audio_row__play_btn")[0].dispatchEvent(click);
 				break;
 			}
 			case "off" : {
