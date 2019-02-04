@@ -161,15 +161,17 @@ var inline_src = (<><![CDATA[
 			  	break;
 			}
 			case "weather" : {
-				localStorage.setItem("weather", "true");
+				recognizer.removeEventListener('end', func);
 				window.open("https:\/\/www.gismeteo.by/");
 				break;
 			}
 			case "translate" : {
+				recognizer.removeEventListener('end', func);
 				window.open("https:\/\/translate.google.by/");
 				break;
 			}
 			case "youtube" : {
+				recognizer.removeEventListener('end', func);
 				window.open("https:\/\/www.youtube.com/");
 				break;
 			}
