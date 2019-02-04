@@ -93,8 +93,8 @@ var inline_src = (<><![CDATA[
 			do: "again"
 		},
 		{
-			questions: "вырубай",
-			answer: "bb",
+			questions: "выход",
+			answer: "leha deactived",
 			do: "off"
 		},
 		{
