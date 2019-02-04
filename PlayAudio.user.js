@@ -7,7 +7,8 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @require		 https://poleshkoroman.github.io/VoiceAssistant.js
-// @match        https://vk.com/audios194032004
+// @match        https://vk.com/romanpoleshko
+// @match		 https://www.youtube.com/
 // ==/UserScript==
 
 
@@ -142,7 +143,7 @@ var inline_src = (<><![CDATA[
 			case "vk_music" : {
 				let href = location.href;
 				let reg = /vk.com/;
-				let host = str.match(reg);
+				let host = href.match(reg);
 				if (host === "vk.com") {
 					let click = new Event("click");
 					document.getElementsByClassName("_audio_row__play_btn")[0].dispatchEvent(click);
