@@ -115,7 +115,7 @@ var inline_src = (<><![CDATA[
 		}
 	]
 
-	let bool = false;
+	let bool;
 	console.log(bool);
 
 	const speech = (array) => {
