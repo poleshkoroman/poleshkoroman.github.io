@@ -114,6 +114,9 @@ var inline_src = (<><![CDATA[
 		}
 	]
 
+	let bool = false;
+	console.log(bool);
+
 	const speech = (array) => {
 		recognizer.onresult = (event) => {
 		    const result = event.results[event.resultIndex];
@@ -159,6 +162,7 @@ var inline_src = (<><![CDATA[
 			}
 			case "weather" : {
 				window.open("https:\/\/www.gismeteo.by/");
+				bool = true;
 				break;
 			}
 			case "translate" : {
