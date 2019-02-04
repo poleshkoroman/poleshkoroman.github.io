@@ -128,6 +128,7 @@ var inline_src = (<><![CDATA[
 	};
 
 	const caseEvent = (text, arr) => {
+		console.log(text);
 		arr.forEach((item) => {
 			if (item.questions === text) {
 				const synth = speechSynthesis;
