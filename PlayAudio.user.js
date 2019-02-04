@@ -92,7 +92,7 @@ var inline_src = (<><![CDATA[
 		}
 	]
 
-	const recognizer = new window.webkitSpeechRecognition();
+	const recognizer = new webkitSpeechRecognition();
 	recognizer.interimResults = true;
 	recognizer.lang = 'ru-Ru';
 
@@ -108,7 +108,7 @@ var inline_src = (<><![CDATA[
 		console.log(text);
 		data.forEach((item) => {
 			if (item.questions === text) {
-				const synth = window.speechSynthesis;
+				const synth = speechSynthesis;
 	  			const utterance = new SpeechSynthesisUtterance(item.answer);
 	  			synth.speak(utterance);
 		  		doSomething(item.do);
