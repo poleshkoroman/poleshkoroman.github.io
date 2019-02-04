@@ -144,12 +144,14 @@ var inline_src = (<><![CDATA[
 				let href = location.href;
 				let reg = /vk.com/;
 				let host = href.match(reg);
-				if (host === "vk.com") {
+				if (host[0] === "vk.com") {
 					let click = new Event("click");
 					document.getElementsByClassName("_audio_row__play_btn")[0].dispatchEvent(click);
 					break;
 				}
 				else alert("Ты не в вк!");
+				speech(data);
+				break;
 			}
 			case "off" : {
 				speech(main_data);
