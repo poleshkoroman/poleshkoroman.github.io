@@ -22,13 +22,13 @@ var inline_src = (<><![CDATA[
 			do: "again"
 		},
 		{
-			questions: "Даша",
-			answer: "darova malaya",
+			questions: "самка",
+			answer: "priver dasha",
 			do: "again"
 		},
 		{
-			questions: "Рома",
-			answer: "darova pidr",
+			questions: "самец",
+			answer: "priver roma",
 			do: "again"
 		},
 		{
