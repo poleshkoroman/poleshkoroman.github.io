@@ -12,8 +12,6 @@
 
 
 var inline_src = (<><![CDATA[
-	// let click = new Event('click');
-	// document.getElementsByClassName('_audio_row__play_btn')[0].dispatchEvent(click);
 
 	let main_data = [
 		{
@@ -23,17 +21,22 @@ var inline_src = (<><![CDATA[
 		},
 		{
 			questions: "Рома",
-			answer: "priver dasha",
+			answer: "dobro pojalovat' Roman Olegovich",
 			do: "status_ok"
 		},
 		{
 			questions: "Даша",
-			answer: "priver roma",
+			answer: "dobro pojalovat' Dar'ya Vyacheslavovna",
 			do: "status_ok"
 		}
 	];
 
     let data = [
+    	{
+			questions: "Лёха",
+			answer: "sho?",
+			do: "again"
+		},
 		{
 			questions: "Здорово",
 			answer: "darov",
@@ -55,16 +58,6 @@ var inline_src = (<><![CDATA[
 			do: "music"
 		},
 		{
-			questions: "красавчик",
-			answer: "pasiba",
-			do: "again"
-		},
-		{
-			questions: "Спасибо",
-			answer: "ne za chto braatan",
-			do: "again"
-		},
-		{
 			questions: "что по погоде",
 			answer: "sek",
 			do: "weather"
@@ -78,6 +71,16 @@ var inline_src = (<><![CDATA[
 			questions: "переводчик",
 			answer: "sek",
 			do: "translate"
+		},
+		{
+			questions: "красавчик",
+			answer: "pasiba",
+			do: "again"
+		},
+		{
+			questions: "Спасибо",
+			answer: "ne za chto braatan",
+			do: "again"
 		},
 		{
 			questions: "Как дела",
@@ -109,20 +112,11 @@ var inline_src = (<><![CDATA[
 	recognizer.interimResults = true;
 	recognizer.lang = 'ru-Ru';
 
-	const speech = () => {
+	const speech = (array) => {
 		recognizer.onresult = (event) => {
 		    const result = event.results[event.resultIndex];
 		    if (result.isFinal) {
-		   		caseEvent(result[0].transcript, arr);
-			}
-	  	};
-	};
-
-	const main_speech = () => {
-		recognizer.onresult = (event) => {
-		    const result = event.results[event.resultIndex];
-		    if (result.isFinal) {
-		   		caseEvent(result[0].transcript, main_data);
+		   		caseEvent(result[0].transcript, array);
 			}
 	  	};
 	};
@@ -141,7 +135,7 @@ var inline_src = (<><![CDATA[
 	const doSomething = (dosomething) => {
 		switch (dosomething) {
 			case "again" : {
-				speech();
+				speech(data);
 				break;
 			}
 			case "music" : {
@@ -166,11 +160,11 @@ var inline_src = (<><![CDATA[
 				break;
 			}
 			case "login_again" : {
-				main_speech();
+				speech(main_data);
 				break;
 			}
 			case "status_ok" : {
-				speech();
+				speech(data);
 				break;
 			}
 		}
@@ -179,14 +173,10 @@ var inline_src = (<><![CDATA[
 	const func = () => {
 		recognizer.start();	
 	};
-
-	const lehaActinated = () => {
-		
-	}
 	
 	recognizer.start();
 	recognizer.addEventListener('end', func);
-	main_speech();
+	speech(main_data);
 
 ]]></>).toString();
 var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
