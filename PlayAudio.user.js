@@ -117,7 +117,7 @@ var inline_src = (<><![CDATA[
 	const doSomething = (dosomething) => {
 		switch (dosomething) {
 			case "again" : {
-				this.speech();
+				speech();
 				break;
 			}
 			case "music" : {
@@ -125,7 +125,7 @@ var inline_src = (<><![CDATA[
 				break;
 			}
 			case "off" : {
-				recognizer.removeEventListener('end', this.func);
+				recognizer.removeEventListener('end', func);
 			  	break;
 			}
 			case "weather" : {
