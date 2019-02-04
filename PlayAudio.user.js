@@ -144,7 +144,7 @@ var inline_src = (<><![CDATA[
 				break;
 			}
 			case "off" : {
-				recognizer.removeEventListener('end', func);
+				speech(main_data);
 			  	break;
 			}
 			case "weather" : {
