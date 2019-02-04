@@ -161,8 +161,8 @@ var inline_src = (<><![CDATA[
 			  	break;
 			}
 			case "weather" : {
-				window.open("https:\/\/www.gismeteo.by/");
 				localStorage.setItem("weather", "true");
+				window.open("https:\/\/www.gismeteo.by/");
 				break;
 			}
 			case "translate" : {
