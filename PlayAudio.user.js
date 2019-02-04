@@ -49,27 +49,32 @@ var inline_src = (<><![CDATA[
 		},
 		{
 			questions: "YouTube",
-			answer: "sek",
+			answer: "",
 			do: "youtube"
 		},
 		{
-			questions: "ВК",
-			answer: "sek",
-			do: "music"
+			questions: "Включи музыку VK",
+			answer: "",
+			do: "vk_music"
+		},
+		{
+			questions: "Выключи музыку VK",
+			answer: "",
+			do: "vk_music"
 		},
 		{
 			questions: "что по погоде",
-			answer: "sek",
+			answer: "",
 			do: "weather"
 		},
 		{
 			questions: "погода",
-			answer: "sek",
+			answer: "",
 			do: "weather"
 		},
 		{
 			questions: "переводчик",
-			answer: "sek",
+			answer: "",
 			do: "translate"
 		},
 		{
@@ -134,10 +139,16 @@ var inline_src = (<><![CDATA[
 				speech(data);
 				break;
 			}
-			case "music" : {
-				let click = new Event("click");
-				document.getElementsByClassName("_audio_row__play_btn")[0].dispatchEvent(click);
-				break;
+			case "vk_music" : {
+				let href = location.href;
+				let reg = /vk.com/;
+				let host = str.match(reg);
+				if (host === "vk.com") {
+					let click = new Event("click");
+					document.getElementsByClassName("_audio_row__play_btn")[0].dispatchEvent(click);
+					break;
+				}
+				else alert("Ты не в вк!");
 			}
 			case "off" : {
 				speech(main_data);
