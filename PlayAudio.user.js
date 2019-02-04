@@ -9,6 +9,7 @@
 // @require		 https://poleshkoroman.github.io/VoiceAssistant.js
 // @match        https://vk.com/romanpoleshko
 // @match		 https://www.youtube.com/
+// @match		 https://www.gismeteo.by/
 // ==/UserScript==
 
 
