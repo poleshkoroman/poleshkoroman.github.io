@@ -18,7 +18,17 @@ var inline_src = (<><![CDATA[
     let data = [
 		{
 			questions: "Лёха",
-			answer: "sho?",
+			answer: "kto eto?",
+			do: "again"
+		},
+		{
+			questions: "Даша",
+			answer: "darova malaya",
+			do: "again"
+		},
+		{
+			questions: "Рома",
+			answer: "darova pidr",
 			do: "again"
 		},
 		{
