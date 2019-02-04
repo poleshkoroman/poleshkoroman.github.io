@@ -108,10 +108,6 @@ var inline_src = (<><![CDATA[
 		}
 	]
 
-	const recognizer = new webkitSpeechRecognition();
-	recognizer.interimResults = true;
-	recognizer.lang = 'ru-Ru';
-
 	const speech = (array) => {
 		recognizer.onresult = (event) => {
 		    const result = event.results[event.resultIndex];
@@ -170,9 +166,13 @@ var inline_src = (<><![CDATA[
 		}
 	};
 		
-	const func = () => {
+	function func(){
 		recognizer.start();	
 	};
+
+	const recognizer = new webkitSpeechRecognition();
+	recognizer.interimResults = true;
+	recognizer.lang = 'ru-Ru';
 	
 	recognizer.start();
 	recognizer.addEventListener('end', func);
