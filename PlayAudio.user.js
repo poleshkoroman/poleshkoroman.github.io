@@ -7,7 +7,7 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @require		 https://poleshkoroman.github.io/VoiceAssistant.js
-// @match        https://vk.com/*
+// @match        https://vk.com/feed
 // ==/UserScript==
 
 
