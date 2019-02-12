@@ -8,8 +8,6 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @require		 https://poleshkoroman.github.io/VoiceAssistant.js
 // @match        https://vk.com/*
-// @match		 https://www.youtube.com/
-// @match		 https://www.gismeteo.by/
 // ==/UserScript==
 
 
@@ -114,8 +112,6 @@ var inline_src = (<><![CDATA[
 			do: "again"
 		}
 	]
-
-	console.log(localStorage.getItem("weather"));
 
 	const speech = (array) => {
 		recognizer.onresult = (event) => {
