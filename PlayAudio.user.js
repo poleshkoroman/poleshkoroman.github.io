@@ -43,6 +43,11 @@ var inline_src = (<><![CDATA[
 			do: "again"
 		},
 		{
+			questions: "Перезагрузи",
+			answer: "",
+			do: "refresh"
+		},
+		{
 			questions: "Включи музыку",
 			answer: "kakuy",
 			do: "again"
@@ -157,19 +162,35 @@ var inline_src = (<><![CDATA[
 			  	break;
 			}
 			case "weather" : {
-				recognizer.removeEventListener('end', func);
-				window.open("https:\/\/www.gismeteo.by/");
+				fetch("http://localhost:5000/weather", {
+		            method: "GET",
+		            headers: {
+		                "Content-Type": "application/json"
+		            }
+		        }).then(
+		            function (response) {
+		                if (response.status !== 200) {
+		                    console.log('Looks like there was a problem. Status Code: ' +
+		                        response.status);
+		                }
+                        console.log(response);
+		                return response.json();
+		            })
+		            .then(function (data) {
+		                console.log(data);
+		            });
 				break;
 			}
 			case "translate" : {
-				recognizer.removeEventListener('end', func);
 				window.open("https:\/\/translate.google.by/");
 				break;
 			}
 			case "youtube" : {
-				recognizer.removeEventListener('end', func);
 				window.open("https:\/\/www.youtube.com/");
 				break;
+			}
+			case "refresh" : {
+				location.reload();
 			}
 			case "login_again" : {
 				speech(main_data);
