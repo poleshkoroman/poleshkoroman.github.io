@@ -182,7 +182,7 @@ var inline_src = (<><![CDATA[
 		}
 	};
 		
-	function func(){
+	const func = () => {
 		recognizer.start();	
 	};
 
