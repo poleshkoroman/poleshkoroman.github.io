@@ -16,17 +16,17 @@ var inline_src = (<><![CDATA[
 	let main_data = [
 		{
 			questions: "Лёха",
-			answer: "kto eto?",
+			answer: "кто это?",
 			do: "login_again"
 		},
 		{
 			questions: "Рома",
-			answer: "dobro pojalovat' Roman Olegovich",
+			answer: "Добро пожаловать Роман Олегович",
 			do: "status_ok"
 		},
 		{
 			questions: "Даша",
-			answer: "dobro pojalovat' Dar'ya Vyacheslavovna",
+			answer: "Добро пожаловать Дарья Вячеславовна",
 			do: "status_ok"
 		}
 	];
@@ -34,22 +34,22 @@ var inline_src = (<><![CDATA[
     let data = [
     	{
 			questions: "Лёха",
-			answer: "sho?",
+			answer: "чё?",
 			do: "again"
 		},
 		{
 			questions: "Здорово",
-			answer: "darov",
+			answer: "даров",
 			do: "again"
 		},
 		{
-			questions: "Перезагрузи",
+			questions: "Обнови",
 			answer: "",
 			do: "refresh"
 		},
 		{
 			questions: "Включи музыку",
-			answer: "kakuy",
+			answer: "какую",
 			do: "again"
 		},
 		{
@@ -84,36 +84,36 @@ var inline_src = (<><![CDATA[
 		},
 		{
 			questions: "красавчик",
-			answer: "pasiba",
+			answer: "пасиба",
 			do: "again"
 		},
 		{
 			questions: "Спасибо",
-			answer: "ne za chto braatan",
+			answer: "не за что братан",
 			do: "again"
 		},
 		{
 			questions: "Как дела",
-			answer: "kak vsegda za ebis",
+			answer: "как всегда заебись",
 			do: "again"
 		},
 		{
 			questions: "понял",
-			answer: "krasava",
+			answer: "красава",
 			do: "again"
 		},
 		{
 			questions: "выход",
-			answer: "Aleksey deactivated",
+			answer: "Лёха деактивэйтэд",
 			do: "off"
 		},
 		{
 			questions: "ничего",
-			answer: "kek",
+			answer: "кек",
 			do: "again"
 		},
 		{
-			answer: "ne ponyal",
+			answer: "не понял",
 			do: "again"
 		}
 	]
@@ -162,6 +162,7 @@ var inline_src = (<><![CDATA[
 			  	break;
 			}
 			case "weather" : {
+                window.open("https://www.gismeteo.by/");
 				fetch("http://localhost:5000/weather", {
 		            method: "GET",
 		            headers: {
@@ -173,11 +174,14 @@ var inline_src = (<><![CDATA[
 		                    console.log('Looks like there was a problem. Status Code: ' +
 		                        response.status);
 		                }
-                        console.log(response);
 		                return response.json();
 		            })
 		            .then(function (data) {
-		                console.log(data);
+                        console.log(data);
+                        let sign = data.temperature.slice(0, 1);
+		                const synth = speechSynthesis;
+                        const utterance = new SpeechSynthesisUtterance(`В ${ data.location } в ${ data.time } ${ sign === "+" ? "плюс" : "минус" } ${ data.temperature }`);
+	  			        synth.speak(utterance);
 		            });
 				break;
 			}
