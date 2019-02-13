@@ -7,18 +7,51 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @require		 https://poleshkoroman.github.io/VoiceAssistant.js
-// @match        https://vk.com/feed
+// @match        https://vk.com/romanpoleshko
 // ==/UserScript==
 
 
 var inline_src = (<><![CDATA[
 
-	let main_data = [
-		{
-			questions: "Лёха",
-			answer: "кто это?",
-			do: "login_again"
+    let radio_record_station = [
+        {
+			questions: "чилаут",
+			answer: "",
+			do: "send_station"
 		},
+		{
+			questions: "классика",
+			answer: "",
+			do: "send_station"
+		},
+		{
+			questions: "рок",
+			answer: "",
+			do: "send_station"
+		},
+        {
+			questions: "Deep",
+			answer: "",
+			do: "send_station"
+		},
+                       {
+			questions: "романтику",
+			answer: "ууу, я закрываю глаза и уши",
+			do: "send_station"
+		},
+        {
+			questions: "русскую",
+			answer: "",
+			do: "send_station"
+		},
+        {
+			questions: "OK",
+			answer: "",
+			do: "again"
+		},
+    ];
+
+	let main_data = [
 		{
 			questions: "Рома",
 			answer: "Добро пожаловать Роман Олегович",
@@ -48,9 +81,14 @@ var inline_src = (<><![CDATA[
 			do: "refresh"
 		},
 		{
-			questions: "Включи музыку",
-			answer: "какую",
-			do: "again"
+			questions: "Включи Radio Record",
+			answer: "Какую станцию",
+			do: "open_radiorecord"
+		},
+        {
+			questions: "Выключи радио Record",
+			answer: "",
+			do: "close_radiorecord"
 		},
 		{
 			questions: "YouTube",
@@ -62,6 +100,16 @@ var inline_src = (<><![CDATA[
 			answer: "",
 			do: "vk_music"
 		},
+        {
+            questions: "дальше",
+			answer: "",
+			do: "next"
+        },
+        {
+            questions: "назад",
+			answer: "",
+			do: "previous"
+        },
 		{
 			questions: "Выключи музыку VK",
 			answer: "",
@@ -118,6 +166,10 @@ var inline_src = (<><![CDATA[
 		}
 	]
 
+    const radiorecord = {
+        state: false
+    };
+
 	const speech = (array) => {
 		recognizer.onresult = (event) => {
 		    const result = event.results[event.resultIndex];
@@ -127,18 +179,29 @@ var inline_src = (<><![CDATA[
 	  	};
 	};
 
+    const newMessage = () => {
+        setInterval(() => {
+           if (document.getElementById("notifiers_wrap").children.length > 0) {
+               const autor = document.getElementsByClassName("mem_link")[0].outerText;
+               const synth = speechSynthesis;
+	  		   const utterance = new SpeechSynthesisUtterance(`Новое сообщение от ${ autor }`);
+	  		   synth.speak(utterance);
+           }
+        },7000);
+    };
+
 	const caseEvent = (text, arr) => {
-		console.log(text);
 		arr.forEach((item) => {
 			if (item.questions === text) {
 				const synth = speechSynthesis;
 	  			const utterance = new SpeechSynthesisUtterance(item.answer);
 	  			synth.speak(utterance);
-		  		doSomething(item.do);
+		  		doSomething(item.do, item.questions);
 			}
 		})
 	};
-	const doSomething = (dosomething) => {
+
+	const doSomething = (dosomething, questions) => {
 		switch (dosomething) {
 			case "again" : {
 				speech(data);
@@ -150,15 +213,70 @@ var inline_src = (<><![CDATA[
 				let host = href.match(reg);
 				if (host[0] === "vk.com") {
 					let click = new Event("click");
-					document.getElementsByClassName("_audio_row__play_btn")[0].dispatchEvent(click);
+					document.getElementsByClassName("top_audio_player_play")[0].dispatchEvent(click);
 					break;
 				}
 				else alert("Ты не в вк!");
 				speech(data);
 				break;
 			}
+            case "open_radiorecord" : {
+                speech(radio_record_station);
+                break;
+            }
+            case "close_radiorecord" : {
+                fetch("http://localhost:5000/radiorecord-close", {
+		            method: "GET",
+		            headers: {
+		                "Content-Type": "application/json"
+		            }
+		        }).then(
+		            function (response) {
+		                if (response.status !== 200) {
+		                    console.log('Looks like there was a problem. Status Code: ' +
+		                        response.status);
+		                }
+		                return response.json();
+		            })
+                    .then((data) => {
+                       radiorecord.state = data.state;
+                    })
+                const synth = speechSynthesis;
+                const utterance = new SpeechSynthesisUtterance('Доступны все команды.');
+                synth.speak(utterance);
+                console.clear();
+                console.log('Доступны все команды.');
+                break;
+            }
+            case "send_station" : {
+                fetch("http://localhost:5000/radiorecord", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                    ,body: JSON.stringify({ station: questions }),
+                }).then((response) => {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                                    response.status);
+                    }
+                    return response.json();
+                })
+                    .then((data) => {
+                       const synth = speechSynthesis;
+                       const utterance = new SpeechSynthesisUtterance('Включены команды управления из Радио Рекорд.');
+                       console.clear();
+                       console.log('Включены команды управления из Радио Рекорд.');
+                       synth.speak(utterance);
+                       if (!radiorecord.state) { window.open("https://www.radiorecord.fm/") };
+                       radiorecord.state = data.state;
+                })
+                break;
+            }
 			case "off" : {
 				speech(main_data);
+                console.clear();
+                console.log('Авторизируйтесь.');
 			  	break;
 			}
 			case "weather" : {
@@ -177,14 +295,23 @@ var inline_src = (<><![CDATA[
 		                return response.json();
 		            })
 		            .then(function (data) {
-                        console.log(data);
                         let sign = data.temperature.slice(0, 1);
 		                const synth = speechSynthesis;
-                        const utterance = new SpeechSynthesisUtterance(`В ${ data.location } в ${ data.time } ${ sign === "+" ? "плюс" : "минус" } ${ data.temperature }`);
+                        const utterance = new SpeechSynthesisUtterance(`В ${ data.location } в ${ data.time } по ощущениям ${ sign === "+" ? "плюс" : "минус" } ${ data.temperature }`);
 	  			        synth.speak(utterance);
 		            });
 				break;
 			}
+            case "next" : {
+                let click = new Event("click");
+                document.getElementsByClassName("top_audio_player_next")[0].dispatchEvent(click);
+                break;
+            }
+            case "previous" : {
+                let click = new Event("click");
+                document.getElementsByClassName("top_audio_player_prev")[0].dispatchEvent(click);
+                break;
+            }
 			case "translate" : {
 				window.open("https:\/\/translate.google.by/");
 				break;
@@ -201,6 +328,12 @@ var inline_src = (<><![CDATA[
 				break;
 			}
 			case "status_ok" : {
+                const synth = speechSynthesis;
+                const utterance = new SpeechSynthesisUtterance('Доступны все команды.');
+                synth.speak(utterance);
+                console.clear();
+                console.log('Доступны все команды.');
+                newMessage();
 				speech(data);
 				break;
 			}
@@ -214,11 +347,14 @@ var inline_src = (<><![CDATA[
 	const recognizer = new webkitSpeechRecognition();
 	recognizer.interimResults = true;
 	recognizer.lang = 'ru-Ru';
-	
 	recognizer.start();
 	recognizer.addEventListener('end', func);
+    const synth = speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance("Леха активирован. Авторизируйтесь.");
+    console.clear();
+    console.log("Леха активирован. Авторизируйтесь.");
+	synth.speak(utterance);
 	speech(main_data);
-
 ]]></>).toString();
 var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
 eval(c.code);
