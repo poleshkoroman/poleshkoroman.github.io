@@ -401,7 +401,6 @@ var inline_src = (<><![CDATA[
 		if (host[0] === "vk.com") {
 			let click = new Event("click");
 			document.getElementsByClassName("top_audio_player_play")[0].dispatchEvent(click);
-			break;
 		}
 		else alert("Ты не в вк!");
 		speech(data.opportunities);
