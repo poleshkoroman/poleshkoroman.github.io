@@ -6,7 +6,6 @@
 // @author       Roman Poleshko
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
-// @require		 https://poleshkoroman.github.io/VoiceAssistant.js
 // @match        https://vk.com/romanpoleshko
 // ==/UserScript==
 
@@ -20,32 +19,32 @@ var inline_src = (<><![CDATA[
 			{
 				request: "чилаут",
 				result: "",
-				action: chooseRadioRecordStation(this.request)
+				action: chooseRadioRecordStation("чилаут")
 			},
 			{
 				request: "классика",
 				result: "",
-				action: chooseRadioRecordStation(this.request)
+				action: chooseRadioRecordStation("классика")
 			},
 			{
 				request: "рок",
 				result: "",
-				action: chooseRadioRecordStation(this.request)
+				action: chooseRadioRecordStation("рок")
 			},
 	        {
 				request: "Deep",
 				result: "",
-				action: chooseRadioRecordStation(this.request)
+				action: chooseRadioRecordStation("Deep")
 			},
 	                       {
 				request: "романтику",
 				result: "ууу, я закрываю глаза и уши",
-				action: chooseRadioRecordStation(this.request)
+				action: chooseRadioRecordStation("романтику")
 			},
 	        {
 				request: "русскую",
 				result: "",
-				action: chooseRadioRecordStation(this.request)
+				action: chooseRadioRecordStation("русскую")
 			},
 	        {
 				request: "OK",
