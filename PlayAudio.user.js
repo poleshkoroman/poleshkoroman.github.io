@@ -13,162 +13,431 @@
 
 var inline_src = (<><![CDATA[
 
-    let radio_record_station = [
-        {
-			questions: "чилаут",
-			answer: "",
-			do: "send_station"
-		},
-		{
-			questions: "классика",
-			answer: "",
-			do: "send_station"
-		},
-		{
-			questions: "рок",
-			answer: "",
-			do: "send_station"
-		},
-        {
-			questions: "Deep",
-			answer: "",
-			do: "send_station"
-		},
-                       {
-			questions: "романтику",
-			answer: "ууу, я закрываю глаза и уши",
-			do: "send_station"
-		},
-        {
-			questions: "русскую",
-			answer: "",
-			do: "send_station"
-		},
-        {
-			questions: "OK",
-			answer: "",
-			do: "again"
-		},
-    ];
+ 	// data
 
-	let main_data = [
-		{
-			questions: "Рома",
-			answer: "Добро пожаловать Роман Олегович",
-			do: "status_ok"
-		},
-		{
-			questions: "Даша",
-			answer: "Добро пожаловать Дарья Вячеславовна",
-			do: "status_ok"
-		}
-	];
+	const data = {
+		radiorecord_station : [
+			{
+				request: "чилаут",
+				result: "",
+				action: chooseRadioRecordStation(this.request)
+			},
+			{
+				request: "классика",
+				result: "",
+				action: chooseRadioRecordStation(this.request)
+			},
+			{
+				request: "рок",
+				result: "",
+				action: chooseRadioRecordStation(this.request)
+			},
+	        {
+				request: "Deep",
+				result: "",
+				action: chooseRadioRecordStation(this.request)
+			},
+	                       {
+				request: "романтику",
+				result: "ууу, я закрываю глаза и уши",
+				action: chooseRadioRecordStation(this.request)
+			},
+	        {
+				request: "русскую",
+				result: "",
+				action: chooseRadioRecordStation(this.request)
+			},
+	        {
+				request: "OK",
+				result: "",
+				action: again()
+			}
+		],
+		users : [
+			{
+				request: "Рома",
+				result: "Добро пожаловать Роман Олегович",
+				action: userIsVerified()
+			},
+			{
+				request: "Даша",
+				result: "Добро пожаловать Дарья Вячеславовна",
+				action: userIsVerified()
+			}
+		],
+		opportunities : [
+	    	{
+				request: "Лёха",
+				result: "чё?",
+				action: again()
+			},
+			{
+				request: "Здорово",
+				result: "даров",
+				action: again()
+			},
+			{
+				request: "Обнови",
+				result: "",
+				action: refresh()
+			},
+			{
+				request: "Включи Radio Record",
+				result: "Какую станцию",
+				action: playRadioRecord()
+			},
+	        {
+				request: "Выключи радио Record",
+				result: "",
+				action: closeRadioRecord()
+			},
+			{
+				request: "YouTube",
+				result: "",
+				action: openYoutube()
+			},
+			{
+				request: "Включи музыку VK",
+				result: "",
+				action: playVkMusic()
+			},
+	        {
+	            request: "дальше",
+				result: "",
+				action: nextTrackInVk()
+	        },
+	        {
+	            request: "назад",
+				result: "",
+				action: previousTrackInVk()
+	        },
+			{
+				request: "Выключи музыку VK",
+				result: "",
+				action: playVkMusic()
+			},
+			{
+				request: "погода",
+				result: "",
+				action: checkWeather()
+			},
+			{
+				request: "переводчик",
+				result: "",
+				action: openTranslate()
+			},
+			{
+				request: "красавчик",
+				result: "пасиба",
+				action: again()
+			},
+			{
+				request: "Спасибо",
+				result: "не за что братан",
+				action: again()
+			},
+			{
+				request: "Как дела",
+				result: "как всегда заебись",
+				action: again()
+			},
+			{
+				request: "понял",
+				result: "красава",
+				action: again()
+			},
+			{
+				request: "выход",
+				result: "Лёха деактивэйтэд",
+				action: offAlexey()
+			},
+			{
+				request: "ничего",
+				result: "кек",
+				action: again()
+			},
+			{
+				result: "не понял",
+				action: again()
+			}
+		]
+	};
 
-    let data = [
-    	{
-			questions: "Лёха",
-			answer: "чё?",
-			do: "again"
-		},
-		{
-			questions: "Здорово",
-			answer: "даров",
-			do: "again"
-		},
-		{
-			questions: "Обнови",
-			answer: "",
-			do: "refresh"
-		},
-		{
-			questions: "Включи Radio Record",
-			answer: "Какую станцию",
-			do: "open_radiorecord"
-		},
-        {
-			questions: "Выключи радио Record",
-			answer: "",
-			do: "close_radiorecord"
-		},
-		{
-			questions: "YouTube",
-			answer: "",
-			do: "youtube"
-		},
-		{
-			questions: "Включи музыку VK",
-			answer: "",
-			do: "vk_music"
-		},
-        {
-            questions: "дальше",
-			answer: "",
-			do: "next"
-        },
-        {
-            questions: "назад",
-			answer: "",
-			do: "previous"
-        },
-		{
-			questions: "Выключи музыку VK",
-			answer: "",
-			do: "vk_music"
-		},
-		{
-			questions: "что по погоде",
-			answer: "",
-			do: "weather"
-		},
-		{
-			questions: "погода",
-			answer: "",
-			do: "weather"
-		},
-		{
-			questions: "переводчик",
-			answer: "",
-			do: "translate"
-		},
-		{
-			questions: "красавчик",
-			answer: "пасиба",
-			do: "again"
-		},
-		{
-			questions: "Спасибо",
-			answer: "не за что братан",
-			do: "again"
-		},
-		{
-			questions: "Как дела",
-			answer: "как всегда заебись",
-			do: "again"
-		},
-		{
-			questions: "понял",
-			answer: "красава",
-			do: "again"
-		},
-		{
-			questions: "выход",
-			answer: "Лёха деактивэйтэд",
-			do: "off"
-		},
-		{
-			questions: "ничего",
-			answer: "кек",
-			do: "again"
-		},
-		{
-			answer: "не понял",
-			do: "again"
-		}
-	]
+  //   let radiorecord_station = [
+  //       {
+		// 	request: "чилаут",
+		// 	result: "",
+		// 	action "send_station"
+		// },
+		// {
+		// 	request: "классика",
+		// 	result: "",
+		// 	action "send_station"
+		// },
+		// {
+		// 	request: "рок",
+		// 	result: "",
+		// 	action "send_station"
+		// },
+  //       {
+		// 	request: "Deep",
+		// 	result: "",
+		// 	action "send_station"
+		// },
+  //                      {
+		// 	request: "романтику",
+		// 	result: "ууу, я закрываю глаза и уши",
+		// 	action "send_station"
+		// },
+  //       {
+		// 	request: "русскую",
+		// 	result: "",
+		// 	action "send_station"
+		// },
+  //       {
+		// 	request: "OK",
+		// 	result: "",
+		// 	action "close_radiorecord"
+		// },
+  //   ];
+
+	// let main_data = [
+	// 	{
+	// 		request: "Рома",
+	// 		result: "Добро пожаловать Роман Олегович",
+	// 		action "status_ok"
+	// 	},
+	// 	{
+	// 		request: "Даша",
+	// 		result: "Добро пожаловать Дарья Вячеславовна",
+	// 		action "status_ok"
+	// 	}
+	// ];
+
+ //    let data = [
+ //    	{
+	// 		request: "Лёха",
+	// 		result: "чё?",
+	// 		action "again"
+	// 	},
+	// 	{
+	// 		request: "Здорово",
+	// 		result: "даров",
+	// 		action "again"
+	// 	},
+	// 	{
+	// 		request: "Обнови",
+	// 		result: "",
+	// 		action "refresh"
+	// 	},
+	// 	{
+	// 		request: "Включи Radio Record",
+	// 		result: "Какую станцию",
+	// 		action "open_radiorecord"
+	// 	},
+ //        {
+	// 		request: "Выключи радио Record",
+	// 		result: "",
+	// 		action "close_radiorecord_page"
+	// 	},
+	// 	{
+	// 		request: "YouTube",
+	// 		result: "",
+	// 		action "youtube"
+	// 	},
+	// 	{
+	// 		request: "Включи музыку VK",
+	// 		result: "",
+	// 		action "vk_music"
+	// 	},
+ //        {
+ //            request: "дальше",
+	// 		result: "",
+	// 		action "next"
+ //        },
+ //        {
+ //            request: "назад",
+	// 		result: "",
+	// 		action "previous"
+ //        },
+	// 	{
+	// 		request: "Выключи музыку VK",
+	// 		result: "",
+	// 		action "vk_music"
+	// 	},
+	// 	{
+	// 		request: "что по погоде",
+	// 		result: "",
+	// 		action "weather"
+	// 	},
+	// 	{
+	// 		request: "погода",
+	// 		result: "",
+	// 		action "weather"
+	// 	},
+	// 	{
+	// 		request: "переводчик",
+	// 		result: "",
+	// 		action "translate"
+	// 	},
+	// 	{
+	// 		request: "красавчик",
+	// 		result: "пасиба",
+	// 		action "again"
+	// 	},
+	// 	{
+	// 		request: "Спасибо",
+	// 		result: "не за что братан",
+	// 		action "again"
+	// 	},
+	// 	{
+	// 		request: "Как дела",
+	// 		result: "как всегда заебись",
+	// 		action "again"
+	// 	},
+	// 	{
+	// 		request: "понял",
+	// 		result: "красава",
+	// 		action "again"
+	// 	},
+	// 	{
+	// 		request: "выход",
+	// 		result: "Лёха деактивэйтэд",
+	// 		action "off"
+	// 	},
+	// 	{
+	// 		request: "ничего",
+	// 		result: "кек",
+	// 		action "again"
+	// 	},
+	// 	{
+	// 		result: "не понял",
+	// 		action "again"
+	// 	}
+	// ];
 
     const radiorecord = {
         state: false
     };
+
+    // actions
+
+    const again = () => {
+		speech(data.opportunities);
+		changeAlexeyStateAndMode("Леха активирован", "Доступны все команды.");
+	}
+
+	const playRadioRecord = () => {
+		changeAlexeyStateAndMode("Леха активирован", "Включены команды управления из Радио Рекорд.");
+		speech(data.radiorecord_station);
+	}
+
+	const closeRadioRecord = () => {
+		fetch("http://localhost:5000/radiorecord-close", {
+		    method: "GET",
+		    headers: {
+		        "Content-Type": "application/json"
+		    }
+		}).then(
+		    function (response) {
+		        if (response.status !== 200) {
+		            console.log('Looks like there was a problem. Status Code: ' + response.status);
+		        }
+		        return response.json();
+		    })
+            .then((res) => {
+                radiorecord.state = res.state;
+            })
+	}
+
+	const chooseRadioRecordStation = (request) => {
+		fetch("http://localhost:5000/radiorecord", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+                ,body: JSON.stringify({ station: request }),
+        }).then((response) => {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+            }
+            return response.json();
+        }).then((data) => {
+            if (!radiorecord.state) { window.open("https://www.radiorecord.fm/") };
+            radiorecord.state = data.state;
+        })
+	}
+
+	const offAlexey = () => {
+		speech(data.users);
+        changeAlexeyStateAndMode("Леха активирован", "Авторизируйтесь");
+	}
+
+	const checkWeather = () => {
+		window.open("https://www.gismeteo.by/");
+		fetch("http://localhost:5000/weather", {
+		    method: "GET",
+		    headers: {
+		        "Content-Type": "application/json"
+		    }
+		}).then(function (response) {
+		    if (response.status !== 200) {
+		      	console.log('Looks like there was a problem. Status Code: ' + response.status);
+		    }
+		    return response.json();
+		}).then(
+		  	function (res) {
+                let sign = res.temperature.slice(0, 1);
+		        const synth = speechSynthesis;
+                const utterance = new SpeechSynthesisUtterance(`В ${ res.location } в ${ res.time } по ощущениям ${ sign === "+" ? "плюс" : "минус" } ${ res.temperature }`);
+	  		    synth.speak(utterance);
+			});
+	}
+
+	const playVkMusic = () => {
+		let href = location.href;
+		let reg = /vk.com/;
+		let host = href.match(reg);
+		if (host[0] === "vk.com") {
+			let click = new Event("click");
+			document.getElementsByClassName("top_audio_player_play")[0].dispatchEvent(click);
+			break;
+		}
+		else alert("Ты не в вк!");
+		speech(data.opportunities);
+	}
+
+	const nextTrackInVk = () => {
+		let click = new Event("click");
+        document.getElementsByClassName("top_audio_player_next")[0].dispatchEvent(click);
+	}
+
+	const previousTrackInVk = () => {
+		let click = new Event("click");
+        document.getElementsByClassName("top_audio_player_prev")[0].dispatchEvent(click);
+	}	
+
+	const openTranslate = () => {
+		window.open("https:\/\/translate.google.by/");
+	}
+
+	const openYoutube = () => {
+		window.open("https:\/\/www.youtube.com/");
+	}
+
+	const refresh = () => {
+		location.reload();
+	}
+
+	// const userIsNotVerified = () => {
+	// 	speech(main_data);
+	// }
+
+	const userIsVerified = () => {
+		changeAlexeyStateAndMode("Леха активирован", "Доступны все команды");
+        newMessage();
+		speech(data.opportunities);
+	}
 
 	const speech = (array) => {
 		recognizer.onresult = (event) => {
@@ -182,179 +451,207 @@ var inline_src = (<><![CDATA[
     const newMessage = () => {
         setInterval(() => {
            if (document.getElementById("notifiers_wrap").children.length > 0) {
-               const autor = document.getElementsByClassName("mem_link")[0].outerText;
-               const synth = speechSynthesis;
-	  		   const utterance = new SpeechSynthesisUtterance(`Новое сообщение от ${ autor }`);
-	  		   synth.speak(utterance);
+               if (document.getElementsByClassName("mem_link")[0].outerText !== undefined) {
+                   const autor = document.getElementsByClassName("mem_link")[0].outerText;
+                   const synth = speechSynthesis;
+	  		       const utterance = new SpeechSynthesisUtterance(`Новое сообщение от ${ autor }`);
+	  		       synth.speak(utterance);
+               };
            }
-        },7000);
+        },7900);
     };
 
 	const caseEvent = (text, arr) => {
 		arr.forEach((item) => {
-			if (item.questions === text) {
+			if (item.request === text) {
 				const synth = speechSynthesis;
-	  			const utterance = new SpeechSynthesisUtterance(item.answer);
+	  			const utterance = new SpeechSynthesisUtterance(item.result);
 	  			synth.speak(utterance);
-		  		doSomething(item.do, item.questions);
+		  		item.action;
 			}
 		})
 	};
 
-	const doSomething = (dosomething, questions) => {
-		switch (dosomething) {
-			case "again" : {
-				speech(data);
-				break;
-			}
-			case "vk_music" : {
-				let href = location.href;
-				let reg = /vk.com/;
-				let host = href.match(reg);
-				if (host[0] === "vk.com") {
-					let click = new Event("click");
-					document.getElementsByClassName("top_audio_player_play")[0].dispatchEvent(click);
-					break;
-				}
-				else alert("Ты не в вк!");
-				speech(data);
-				break;
-			}
-            case "open_radiorecord" : {
-                speech(radio_record_station);
-                break;
-            }
-            case "close_radiorecord" : {
-                fetch("http://localhost:5000/radiorecord-close", {
-		            method: "GET",
-		            headers: {
-		                "Content-Type": "application/json"
-		            }
-		        }).then(
-		            function (response) {
-		                if (response.status !== 200) {
-		                    console.log('Looks like there was a problem. Status Code: ' +
-		                        response.status);
-		                }
-		                return response.json();
-		            })
-                    .then((data) => {
-                       radiorecord.state = data.state;
-                    })
-                const synth = speechSynthesis;
-                const utterance = new SpeechSynthesisUtterance('Доступны все команды.');
-                synth.speak(utterance);
-                console.clear();
-                console.log('Доступны все команды.');
-                break;
-            }
-            case "send_station" : {
-                fetch("http://localhost:5000/radiorecord", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                    ,body: JSON.stringify({ station: questions }),
-                }).then((response) => {
-                    if (response.status !== 200) {
-                        console.log('Looks like there was a problem. Status Code: ' +
-                                    response.status);
-                    }
-                    return response.json();
-                })
-                    .then((data) => {
-                       const synth = speechSynthesis;
-                       const utterance = new SpeechSynthesisUtterance('Включены команды управления из Радио Рекорд.');
-                       console.clear();
-                       console.log('Включены команды управления из Радио Рекорд.');
-                       synth.speak(utterance);
-                       if (!radiorecord.state) { window.open("https://www.radiorecord.fm/") };
-                       radiorecord.state = data.state;
-                })
-                break;
-            }
-			case "off" : {
-				speech(main_data);
-                console.clear();
-                console.log('Авторизируйтесь.');
-			  	break;
-			}
-			case "weather" : {
-                window.open("https://www.gismeteo.by/");
-				fetch("http://localhost:5000/weather", {
-		            method: "GET",
-		            headers: {
-		                "Content-Type": "application/json"
-		            }
-		        }).then(
-		            function (response) {
-		                if (response.status !== 200) {
-		                    console.log('Looks like there was a problem. Status Code: ' +
-		                        response.status);
-		                }
-		                return response.json();
-		            })
-		            .then(function (data) {
-                        let sign = data.temperature.slice(0, 1);
-		                const synth = speechSynthesis;
-                        const utterance = new SpeechSynthesisUtterance(`В ${ data.location } в ${ data.time } по ощущениям ${ sign === "+" ? "плюс" : "минус" } ${ data.temperature }`);
-	  			        synth.speak(utterance);
-		            });
-				break;
-			}
-            case "next" : {
-                let click = new Event("click");
-                document.getElementsByClassName("top_audio_player_next")[0].dispatchEvent(click);
-                break;
-            }
-            case "previous" : {
-                let click = new Event("click");
-                document.getElementsByClassName("top_audio_player_prev")[0].dispatchEvent(click);
-                break;
-            }
-			case "translate" : {
-				window.open("https:\/\/translate.google.by/");
-				break;
-			}
-			case "youtube" : {
-				window.open("https:\/\/www.youtube.com/");
-				break;
-			}
-			case "refresh" : {
-				location.reload();
-			}
-			case "login_again" : {
-				speech(main_data);
-				break;
-			}
-			case "status_ok" : {
-                const synth = speechSynthesis;
-                const utterance = new SpeechSynthesisUtterance('Доступны все команды.');
-                synth.speak(utterance);
-                console.clear();
-                console.log('Доступны все команды.');
-                newMessage();
-				speech(data);
-				break;
-			}
-		}
-	};
+	// const doSomething = (action, request) => {
+	// 	switch (action) {
+	// 		case "again" : {
+	// 			speech(data);
+	// 			break;
+	// 		}
+	// 		case "vk_music" : {
+	// 			let href = location.href;
+	// 			let reg = /vk.com/;
+	// 			let host = href.match(reg);
+	// 			if (host[0] === "vk.com") {
+	// 				let click = new Event("click");
+	// 				document.getElementsByClassName("top_audio_player_play")[0].dispatchEvent(click);
+	// 				break;
+	// 			}
+	// 			else alert("Ты не в вк!");
+	// 			speech(data);
+	// 			break;
+	// 		}
+ //            case "open_radiorecord" : {
+ //                speech(radiorecord_station);
+ //                changeAlexeyStateAndMode("Леха активирован", "Включены команды управления из Радио Рекорд.");
+ //                break;
+ //            }
+ //            case "close_radiorecord" : {
+	// 			speech(data);
+ //                changeAlexeyStateAndMode("Леха активирован", "Доступны все команды.");
+	// 			break;
+	// 		}
+ //            case "close_radiorecord_page" : {
+ //                fetch("http://localhost:5000/radiorecord-close", {
+	// 	            method: "GET",
+	// 	            headers: {
+	// 	                "Content-Type": "application/json"
+	// 	            }
+	// 	        }).then(
+	// 	            function (response) {
+	// 	                if (response.status !== 200) {
+	// 	                    console.log('Looks like there was a problem. Status Code: ' +
+	// 	                        response.status);
+	// 	                }
+	// 	                return response.json();
+	// 	            })
+ //                    .then((data) => {
+ //                       radiorecord.state = data.state;
+ //                    })
+ //                break;
+ //            }
+ //            case "send_station" : {
+ //                fetch("http://localhost:5000/radiorecord", {
+ //                    method: "POST",
+ //                    headers: {
+ //                        "Content-Type": "application/json"
+ //                    }
+ //                    ,body: JSON.stringify({ station: request }),
+ //                }).then((response) => {
+ //                    if (response.status !== 200) {
+ //                        console.log('Looks like there was a problem. Status Code: ' +
+ //                                    response.status);
+ //                    }
+ //                    return response.json();
+ //                })
+ //                    .then((data) => {
+ //                       if (!radiorecord.state) { window.open("https://www.radiorecord.fm/") };
+ //                       radiorecord.state = data.state;
+ //                })
+ //                break;
+ //            }
+	// 		case "off" : {
+	// 			speech(main_data);
+ //                changeAlexeyStateAndMode("Леха активирован", "Авторизируйтесь");
+	// 		  	break;
+	// 		}
+	// 		case "weather" : {
+ //                window.open("https://www.gismeteo.by/");
+	// 			fetch("http://localhost:5000/weather", {
+	// 	            method: "GET",
+	// 	            headers: {
+	// 	                "Content-Type": "application/json"
+	// 	            }
+	// 	        }).then(
+	// 	            function (response) {
+	// 	                if (response.status !== 200) {
+	// 	                    console.log('Looks like there was a problem. Status Code: ' +
+	// 	                        response.status);
+	// 	                }
+	// 	                return response.json();
+	// 	            })
+	// 	            .then(function (data) {
+ //                        let sign = data.temperature.slice(0, 1);
+	// 	                const synth = speechSynthesis;
+ //                        const utterance = new SpeechSynthesisUtterance(`В ${ data.location } в ${ data.time } по ощущениям ${ sign === "+" ? "плюс" : "минус" } ${ data.temperature }`);
+	//   			        synth.speak(utterance);
+	// 	            });
+	// 			break;
+	// 		}
+ //            case "next" : {
+ //                let click = new Event("click");
+ //                document.getElementsByClassName("top_audio_player_next")[0].dispatchEvent(click);
+ //                break;
+ //            }
+ //            case "previous" : {
+ //                let click = new Event("click");
+ //                document.getElementsByClassName("top_audio_player_prev")[0].dispatchEvent(click);
+ //                break;
+ //            }
+	// 		case "translate" : {
+	// 			window.open("https:\/\/translate.google.by/");
+	// 			break;
+	// 		}
+	// 		case "youtube" : {
+	// 			window.open("https:\/\/www.youtube.com/");
+	// 			break;
+	// 		}
+	// 		case "refresh" : {
+	// 			location.reload();
+	// 			break;
+	// 		}
+	// 		case "login_again" : {
+	// 			speech(main_data);
+	// 			break;
+	// 		}
+	// 		case "status_ok" : {              
+ //                changeAlexeyStateAndMode("Леха активирован", "Доступны все команды");
+ //                newMessage();
+	// 			speech(data);
+	// 			break;
+	// 		}
+	// 	}
+	// };
 		
-	const func = () => {
-		recognizer.start();	
+	const infiniteRecognition = () => {
+		recognizer.start();
 	};
 
-	const recognizer = new webkitSpeechRecognition();
-	recognizer.interimResults = true;
-	recognizer.lang = 'ru-Ru';
-	recognizer.start();
-	recognizer.addEventListener('end', func);
-    const synth = speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance("Леха активирован. Авторизируйтесь.");
-    console.clear();
-    console.log("Леха активирован. Авторизируйтесь.");
-	synth.speak(utterance);
-	speech(main_data);
+    const showControlPanel = (state = "", mode = "") => {
+        const page = document.getElementsByClassName('scroll_fix_wrap')[2];
+        const panelContainer = document.createElement('div');
+        const alexeyState = document.createElement('span');
+        const alexeyMode = document.createElement('span');
+        // panelContainer.style.width = 50 + 'px';
+        // panelContainer.style.height = 50 + 'px';
+        panelContainer.style.position = 'fixed';
+        panelContainer.style.top = 100 + 'px';
+        panelContainer.style.right = 70 + 'px';
+        panelContainer.style.backgroundColor = '#4a76a8';
+        panelContainer.style.padding = 10 + 'px';
+        panelContainer.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+        panelContainer.style.display = 'flex';
+        panelContainer.style.flexDirection = 'column';
+        alexeyState.classList.add('alexey-state');
+        alexeyState.innerText = state;
+        alexeyState.style.textAlign = "center";
+        alexeyState.style.color = 'white';
+        alexeyMode.classList.add('alexey-mode');
+        alexeyMode.innerText = mode;
+        alexeyMode.style.textAlign = "center";
+        alexeyMode.style.color = 'white';
+        panelContainer.appendChild(alexeyState);
+        panelContainer.appendChild(alexeyMode);
+        page.appendChild(panelContainer);
+    };
+
+    const changeAlexeyStateAndMode = (state = "", mode = "") => {
+        document.getElementsByClassName('alexey-state')[0].innerText = state;
+        document.getElementsByClassName('alexey-mode')[0].innerText = mode;
+    };
+
+    const initAlexey = () => {
+    	const recognizer = new webkitSpeechRecognition();
+		recognizer.interimResults = true;
+		recognizer.lang = 'ru-Ru';
+		recognizer.start();
+	    showControlPanel("Леха активирован", "Авторизируйтесь");
+		recognizer.addEventListener('end', infiniteRecognition);
+		speech(data.users);
+    }
+
+    initAlexey();
+
 ]]></>).toString();
 var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
 eval(c.code);
