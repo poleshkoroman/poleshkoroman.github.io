@@ -1,0 +1,30 @@
+.auth-container {
+	margin: auto;
+	width: 503px;
+	height: 379px;
+	border-radius: 44px;
+	background-color: #e990f9;
+	text-align: center;
+}
+
+.auth-container > .image {
+	margin-top: 77px;
+}
+
+.auth-container > .btn {
+	margin-top: 56px;
+}
+
+.auth-container > .btn > button {
+	width: 151px;
+	height: 60px;
+	border-radius: 36px;
+	border: solid 3px #ffffff;
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 18px;
+	color: #fff;
+	font-family: SFUIText-Bold;
+	font-size: 18px;
+}
+
+

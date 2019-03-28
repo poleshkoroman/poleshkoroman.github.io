@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face{
+	font-family: 'SFUIText-Bold';
+	src: url('../fonts/SFUIText-Bold/SFUIText-Bold.eot');
+	src: url('../fonts/SFUIText-Bold/SFUIText-Bold.eot?iefix') format('eot'),
+	url('../fonts/SFUIText-Bold/SFUIText-Bold.woff') format('woff'),
+	url('../fonts/SFUIText-Bold/SFUIText-Bold.ttf') format('truetype'),
+	url('../fonts/SFUIText-Bold/SFUIText-Bold.svg#webfont') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'SFUIText-Regular';
+	src: url('../fonts/SFUIText-Regular/SFUIText-Regular.eot');
+	src: url('../fonts/SFUIText-Regular/SFUIText-Regular.eot?iefix') format('eot'),
+	url('../fonts/SFUIText-Regular/SFUIText-Regular.woff') format('woff'),
+	url('../fonts/SFUIText-Regular/SFUIText-Regular.ttf') format('truetype'),
+	url('../fonts/SFUIText-Regular/SFUIText-Regular.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'SFUIText-Medium';
+	src: url('../fonts/SFUIText-Medium/SFUIText-Medium.eot');
+	src: url('../fonts/SFUIText-Medium/SFUIText-Medium.eot?iefix') format('eot'),
+	url('../fonts/SFUIText-Medium/SFUIText-Medium.woff') format('woff'),
+	url('../fonts/SFUIText-Medium/SFUIText-Medium.ttf') format('truetype'),
+	url('../fonts/SFUIText-Medium/SFUIText-Medium.svg#webfont') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
