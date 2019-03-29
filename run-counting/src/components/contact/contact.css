@@ -1,0 +1,35 @@
+.contact-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-container * {
+	-ms-align-self: center;
+	align-self: center;
+}
+
+.contact-container img {
+	width: 280px;
+	height: 280px;
+	margin-top: 100px;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.contact-container a {
+	font-family: SFUIText-Regular;
+	font-size: 15px;
+	color: #747474;
+}
+
+.contact-container .social-vk {
+	margin: 30px auto;
+	font-family: SFUIText-Bold;
+	font-size: 20px;
+	color: #747474;
+}
+
+.contact-container a:last-child {
+	margin-top: 10px;
+}
+

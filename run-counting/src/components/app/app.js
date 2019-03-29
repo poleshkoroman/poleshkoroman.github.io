@@ -7,6 +7,7 @@ import JogsList from '../jogs-list';
 import ScamperInfo from '../scamper-info';
 import Info from '../info';
 import EmptyList from '../empty-list';
+import Contact from '../contact';
 
 import './app.css';
 
@@ -22,6 +23,7 @@ class App extends Component {
 		                <Route path='/jogs' component={ JogsList } />
 		                <Route path='/scamper' component={ ScamperInfo } />
 		                <Route path='/info' component={ Info } />
+		                <Route path='/contact' component={ Contact } />
 		    		</Switch>	
 	    	</BrowserRouter>
     	</div>
