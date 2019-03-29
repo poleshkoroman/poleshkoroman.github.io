@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../header';
 import Authorization from '../authorization';
-import RunningList from '../running-list';
-import RunInformation from '../run-info';
+import JogsList from '../jogs-list';
+import ScamperInfo from '../scamper-info';
 import Info from '../info';
 import './app.css';
 
@@ -11,7 +11,7 @@ class App extends Component {
     return (
     	<div className="wrapper">
     		<Header />
-    		<Info />
+    		<JogsList />
     	</div>
     );
   }

@@ -6,7 +6,7 @@
 	background-color: #7ed321;
 }
 
-.run-info-container {
+.scamper-info-container {
 	margin: 118px auto auto auto;
 	width: 503px;
   	height: 379px;
@@ -16,7 +16,7 @@
 	flex-direction: column;
 }
 
-.run-info-container > .close {
+.scamper-info-container > .close {
 	width: max-content;
 	margin-top: 27px;
 	margin-right: 27px;
@@ -24,24 +24,24 @@
 	align-self: flex-end;
 }
 
-.run-info-container > .info {
+.scamper-info-container > .info {
 	width: 326px;
 	-ms-align-self: center;
 	align-self: center;
 }
 
-.run-info-container > .info > .distance {
+.scamper-info-container > .info > .distance {
 	margin-top: 50px;
 }
 
-.run-info-container > .info > div {
+.scamper-info-container > .info > div {
 	margin-top: 25px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.run-info-container > .info > div > span {
+.scamper-info-container > .info > div > span {
 	font-family: SFUIText-Regular;
 	font-size: 16px;
 	color: #000;
@@ -49,7 +49,7 @@
 	margin-bottom: auto;
 }
 
-.run-info-container > .info > div input {
+.scamper-info-container > .info > div input {
 	font-family: SFUIText-Regular;
 	font-size: 16px;
 	text-align: center;
@@ -61,7 +61,7 @@
 	background-color: #ffffff;
 }
 
-.run-info-container > .info > button {
+.scamper-info-container > .info > button {
 	margin-top: 35px;
 	width: 326px;
   	height: 42px;
@@ -76,7 +76,7 @@
 				color .2s;
 }
 
-.run-info-container > .info > button:hover {
+.scamper-info-container > .info > button:hover {
 	transition: background-color .2s,
 				color .2s;
 	background-color: #fff;

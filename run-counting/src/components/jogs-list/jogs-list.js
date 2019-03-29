@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './running-list.css';
+import './jogs-list.css';
 
-class RunningList extends Component {
+class JogsList extends Component {
 
 	constructor(props) {
     	super(props);
@@ -96,7 +96,7 @@ class RunningList extends Component {
   	render() {
   		const items = this.createItems();
     	return (
-    		<div className="rl-container">
+    		<div className="jogs-list-container">
     			<div className="filter active">
     				<div className="from">
     					<span>Date from</span>
@@ -115,7 +115,7 @@ class RunningList extends Component {
 						/>
     				</div>
     			</div>
-    			<div className="running-list">
+    			<div className="jogs-list">
     				{ items }
     			</div>
     			<svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60" className="add-a-run">
@@ -138,4 +138,4 @@ class RunningList extends Component {
   	}
 }
 
-export default RunningList;
+export default JogsList;
