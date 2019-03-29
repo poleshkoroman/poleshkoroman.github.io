@@ -6,6 +6,10 @@
 	background-color: #7ed321;
 }
 
+a {
+	text-decoration: none;
+}
+
 .filter {
 	display: flex;
     flex-direction: row;
@@ -117,6 +121,7 @@
 .jogs-list .item .info p {
 	font-family: SFUIText-Medium;
 	font-size: 14px;
+	color: #000;
 }
 
 .jogs-list .item .info p > span {

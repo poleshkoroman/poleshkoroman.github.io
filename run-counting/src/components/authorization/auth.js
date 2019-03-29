@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './auth.css';
 
 class Authorization extends Component {
@@ -24,7 +25,7 @@ class Authorization extends Component {
 				</svg>
 			</div>
 			<div className="btn">
-				<button>Let me in</button>
+				<Link to={{ pathname: '/jogs' }}>Let me in</Link>
 			</div>
     	</div>
     );

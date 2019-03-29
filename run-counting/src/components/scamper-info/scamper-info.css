@@ -9,7 +9,7 @@
 .scamper-info-container {
 	margin: 118px auto auto auto;
 	width: 503px;
-  	height: 379px;
+  	height: max-content;
   	border-radius: 44px;
 	background-color: #7ed321;
 	display: flex;
@@ -61,10 +61,14 @@
 	background-color: #ffffff;
 }
 
-.scamper-info-container > .info > button {
-	margin-top: 35px;
-	width: 326px;
-  	height: 42px;
+.scamper-info-container > .info > .btn {
+	margin: 46px auto;
+
+}
+
+.scamper-info-container > .info > .btn > .save-changes {
+	text-decoration: none;
+  	padding: 15px 146px;
   	border-radius: 25.2px;
   	border: solid 2px #ffffff;
   	background-color: #7ed321;
@@ -76,7 +80,7 @@
 				color .2s;
 }
 
-.scamper-info-container > .info > button:hover {
+.scamper-info-container > .info > .btn > .save-changes:hover {
 	transition: background-color .2s,
 				color .2s;
 	background-color: #fff;

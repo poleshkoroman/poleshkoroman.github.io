@@ -24,10 +24,6 @@
 
 .header-container .menu .menu-list li {
 	display: inline-block;
-	font-family: SFUIText-Bold;
-	font-size: 14px;
-	text-transform: uppercase;
-	color: #fff;
 	margin-right: 23px;
 	margin-left: 23px;
 	line-height: 2;
@@ -42,6 +38,16 @@
 	transition: border-bottom .2s;
 	border-bottom: 2px solid #fff;
 }
+
+.header-container .menu .menu-list li a {
+	font-family: SFUIText-Bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+}
+
+
 
 .header-container .filter-toggle {
 	margin-right: 39px;

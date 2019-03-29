@@ -1,7 +1,7 @@
 .auth-container {
 	margin: auto;
 	width: 503px;
-	height: 379px;
+	height: max-content;
 	border-radius: 44px;
 	background-color: #e990f9;
 	text-align: center;
@@ -12,12 +12,12 @@
 }
 
 .auth-container > .btn {
-	margin-top: 56px;
+	margin: 56px auto;
 }
 
-.auth-container > .btn > button {
-	width: 151px;
-	height: 60px;
+.auth-container > .btn > a {
+	text-decoration: none;
+	padding: 17px 60px;
 	border-radius: 36px;
 	border: solid 3px #ffffff;
 	background-color: #e990f9;
@@ -29,7 +29,7 @@
 				color .2s;
 }
 
-.auth-container > .btn > button:hover {
+.auth-container > .btn > a:hover {
 	transition: background-color .2s,
 				color .2s;
 	background-color: #fff;

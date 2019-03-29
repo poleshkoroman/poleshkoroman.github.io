@@ -19,10 +19,13 @@
 	color: #747474;
 }
 
-.empty-list-container > button {
+.empty-list-container > a {
+	text-align: center;
+	padding-top: 21px;
+	padding-bottom: 21px;
+	text-decoration: none;
 	margin-top: 100px;
 	width: 249px;
-  	height: 60px;
   	border-radius: 36px;
   	border: solid 3px #e990f9;
   	background-color: rgba(0, 0, 0, 0);
@@ -33,7 +36,7 @@
 				color .2s;
 }
 
-.empty-list-container > button:hover {
+.empty-list-container > a:hover {
 	background-color: #e990f9;
 	color: #fff;
 	transition: background-color .2s,
