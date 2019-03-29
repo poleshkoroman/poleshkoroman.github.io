@@ -27,12 +27,12 @@ a {
 	transition: opacity .2s;
 }
 
-.filter.not-active {
+.filter{
 	height: 0;
 	transition: height .2s;
 }
 
-.filter.not-active * {
+.filter * {
 	opacity: 0;
 	transition: opacity .2s;
 	pointer-events: none;
@@ -83,7 +83,7 @@ a {
 }
 
 .jogs-list .item:last-child {
-	margin-bottom: 58px;
+	margin-bottom: 58px !important;
 }
 
 .jogs-list .item {

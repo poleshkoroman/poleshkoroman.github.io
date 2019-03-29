@@ -23,6 +23,11 @@ class JogsList extends Component {
   	}
 
   	componentDidMount = () => {
+
+      if (document.getElementsByClassName('filter-toggle')[0].classList.contains('active')) {
+        document.getElementsByClassName('filter')[0].classList.add('active');
+      }
+
   		let temp = new Date();
       	temp.setFullYear(2017, 11, 20);
       	let str = `${ temp.getDate() }.${ temp.getMonth() + 1 }.${ temp.getYear()+1900 }`;
@@ -101,7 +106,7 @@ class JogsList extends Component {
   		const items = this.createItems();
     	return (
     		<div className="jogs-list-container">
-    			<div className="filter active">
+    			<div className="filter">
     				<div className="from">
     					<span>Date from</span>
     					<DatePicker

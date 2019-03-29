@@ -17,3 +17,7 @@ a:active, a:hover, a:visited, a:focus {
 	display: flex;
     flex-direction: column;
 }
+
+.hidden {
+	display: none !important;
+}

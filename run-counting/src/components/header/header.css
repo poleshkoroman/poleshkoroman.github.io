@@ -62,11 +62,11 @@
 	fill: #62AA14;
 }
 
-.header-container .filter-toggle.not-active {
+.header-container .filter-toggle {
 	stroke: #fff;
 }
 
-.header-container .filter-toggle.not-active path {
+.header-container .filter-toggle path {
 	fill: #fff;
 }
 
