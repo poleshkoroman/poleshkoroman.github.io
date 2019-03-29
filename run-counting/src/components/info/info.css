@@ -1,0 +1,19 @@
+.info-container {
+	width: 614px;
+	margin: 85px auto auto auto;
+}
+
+.info-container > .title {
+	font-family: SFUIText-Bold;
+  	font-size: 36px;
+  	text-transform: uppercase;
+  	color: #7ed321;
+}
+
+.info-container > p {
+	margin-top: 15px;
+	font-family: SFUIText-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #747474;
+}
