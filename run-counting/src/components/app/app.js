@@ -4,6 +4,7 @@ import Authorization from '../authorization';
 import JogsList from '../jogs-list';
 import ScamperInfo from '../scamper-info';
 import Info from '../info';
+import EmptyList from '../empty-list';
 import './app.css';
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
     return (
     	<div className="wrapper">
     		<Header />
-    		<JogsList />
+    		<EmptyList />
     	</div>
     );
   }
