@@ -1,0 +1,84 @@
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range {
+	background-color: #7ed321;
+}
+
+.react-datepicker__day--selected:hover, .react-datepicker__day--in-selecting-range:hover, .react-datepicker__day--in-range:hover, .react-datepicker__month-text--selected:hover, .react-datepicker__month-text--in-selecting-range:hover, .react-datepicker__month-text--in-range:hover {
+	background-color: #7ed321;
+}
+
+.run-info-container {
+	margin: 118px auto auto auto;
+	width: 503px;
+  	height: 379px;
+  	border-radius: 44px;
+	background-color: #7ed321;
+	display: flex;
+	flex-direction: column;
+}
+
+.run-info-container > .close {
+	width: max-content;
+	margin-top: 27px;
+	margin-right: 27px;
+	-ms-align-self: flex-end;
+	align-self: flex-end;
+}
+
+.run-info-container > .info {
+	width: 326px;
+	-ms-align-self: center;
+	align-self: center;
+}
+
+.run-info-container > .info > .distance {
+	margin-top: 50px;
+}
+
+.run-info-container > .info > div {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.run-info-container > .info > div > span {
+	font-family: SFUIText-Regular;
+	font-size: 16px;
+	color: #000;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.run-info-container > .info > div input {
+	font-family: SFUIText-Regular;
+	font-size: 16px;
+	text-align: center;
+	color: #747474;
+	width: 236px;
+	height: 31px;
+	border-radius: 7px;
+	border: solid 1px #979797;
+	background-color: #ffffff;
+}
+
+.run-info-container > .info > button {
+	margin-top: 35px;
+	width: 326px;
+  	height: 42px;
+  	border-radius: 25.2px;
+  	border: solid 2px #ffffff;
+  	background-color: #7ed321;
+  	font-family: SFUIText-Bold;
+	font-size: 12.6px;
+	text-align: center;
+	color: #fff;
+	transition: background-color .2s,
+				color .2s;
+}
+
+.run-info-container > .info > button:hover {
+	transition: background-color .2s,
+				color .2s;
+	background-color: #fff;
+	color: #7ed321;
+}

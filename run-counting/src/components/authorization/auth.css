@@ -20,11 +20,20 @@
 	height: 60px;
 	border-radius: 36px;
 	border: solid 3px #ffffff;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: #e990f9;
 	font-size: 18px;
 	color: #fff;
 	font-family: SFUIText-Bold;
 	font-size: 18px;
+	transition: background-color .2s,
+				color .2s;
+}
+
+.auth-container > .btn > button:hover {
+	transition: background-color .2s,
+				color .2s;
+	background-color: #fff;
+	color: #e990f9;
 }
 
 
