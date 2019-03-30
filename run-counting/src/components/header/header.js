@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import './header.css';
 
 class Header extends Component {
+
+  
   
   toggleFilter = () => {
     const filter = document.getElementsByClassName('filter')[0];
@@ -11,8 +13,6 @@ class Header extends Component {
       filter_icon.classList.toggle('active');
       filter.classList.toggle('active');
     }
-   
-
 
   }
 
@@ -40,12 +40,15 @@ class Header extends Component {
                  <Link to={{ pathname: '/contact' }}>contact us</Link>  
               </li>
             </ul>
-            <svg onClick={ this.toggleFilter } xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" className="filter-toggle">
+            <svg onClick={ this.toggleFilter } xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" className="filter-toggle hidden">
                 <g fill="none" fillRule="evenodd">
                     <path d="M32.814 8.83c-.209-.478-.57-.717-1.086-.717H8.195c-.514 0-.876.24-1.084.717-.209.503-.123.932.257 1.287l9.064 9.064v8.935c0 .32.117.595.35.828l4.706 4.706c.22.233.497.35.827.35.148 0 .3-.03.46-.092.478-.209.717-.57.717-1.085V19.181l9.064-9.064c.38-.355.466-.784.258-1.287z"/>
                     <rect width="37" height="37" x="1" y="1" strokeWidth="2" rx="6"/>
                 </g>
             </svg>
+            <Link to={{ pathname: '/menu' }}>
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" className="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+            </Link>
           </div>  
         </nav>
       </header>

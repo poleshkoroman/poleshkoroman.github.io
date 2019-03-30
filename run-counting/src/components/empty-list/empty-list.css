@@ -42,3 +42,17 @@
 	transition: background-color .2s,
 				color .2s;
 }
+
+@media (max-width: 670px) {
+	.empty-list-container > svg {
+		margin-top: 140px;
+		width: 85px;
+		height: 85px;
+	}
+}
+
+@media (max-width: 330px) {
+	.empty-list-container > a {
+		margin-top: 60px;
+	}
+}

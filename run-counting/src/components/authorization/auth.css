@@ -36,4 +36,32 @@
 	color: #e990f9;
 }
 
+@media (max-width: 670px) {
+	.auth-container {
+		width: 100%;
+		background-color: #fff;
+	}
+	.auth-container .image {
+		margin-top: 141px;
+	}
+	.auth-container .image svg {
+		stroke: #e990f9;
+	}
+	.auth-container .image path {
+		fill: #e990f9;
+	}
+	.auth-container > .btn {
+		margin: 103px auto;
+	}
+	.auth-container > .btn > a {
+		border: solid 3px #e990f9;
+		background-color: #fff;
+		color: #e990f9;
+	}
+	.auth-container > .btn > a:hover {
+		background-color: #e990f9;
+		color: #fff;
+	}
+}
+
 

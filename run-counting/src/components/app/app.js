@@ -8,6 +8,7 @@ import ScamperInfo from '../scamper-info';
 import Info from '../info';
 import EmptyList from '../empty-list';
 import Contact from '../contact';
+import MobileMenu from '../mobile-menu';
 
 import './app.css';
 
@@ -19,6 +20,7 @@ class App extends Component {
 	    		<Header />
 		    		<Switch>
 		    			<Route exact path='/' component={ Authorization } />
+		    			<Route path='/menu' component= { MobileMenu } />
 		                <Route path='/jogsempty' component={ EmptyList } />
 		                <Route path='/jogs' component={ JogsList } />
 		                <Route path='/scamper' component={ ScamperInfo } />

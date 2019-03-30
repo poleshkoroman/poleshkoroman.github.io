@@ -17,3 +17,16 @@
 	line-height: 1.7;
 	color: #747474;
 }
+
+@media (max-width: 670px) {
+	.info-container {
+		width: 86.7%;
+		margin: 24px auto auto auto;
+	}
+	.info-container > .title {
+		font-size: 25px;
+	}
+	.info-container > p {
+		font-size: 12px;
+	}
+}

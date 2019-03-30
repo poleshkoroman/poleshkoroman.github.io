@@ -1,0 +1,43 @@
+.mobile-menu-container .mobile-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.mobile-menu-container .mobile-menu a {
+	margin-top: 20px;
+	margin-left: 25px;
+}
+
+.mobile-menu-container .mobile-menu .close {
+	margin-top: 28px;
+	margin-right: 25px;
+	height: max-content;
+}
+
+.mobile-menu-container ul {
+	padding: 0;
+	margin: 0;
+	margin-top: 127px;
+}
+
+.mobile-menu-container .mm-list li:first-child {
+	margin-top: 0;
+}
+
+.mobile-menu-container .mm-list li {
+	list-style: none;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.mobile-menu-container .mm-list a {
+	font-family: SFUIText-Bold;
+	font-size: 25px;
+	color: #000;
+	text-transform: uppercase;
+}
+
+.mobile-menu-container .mm-list a:hover, .mobile-menu-container .mm-list a:active, .mobile-menu-container .mm-list a:focus {
+	color: #7ed321;
+}

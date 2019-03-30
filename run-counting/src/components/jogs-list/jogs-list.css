@@ -25,6 +25,9 @@ a {
 .filter.active * {
 	opacity: 1;
 	transition: opacity .2s;
+	pointer-events: auto;
+   	cursor: auto;
+	
 }
 
 .filter{
@@ -78,6 +81,18 @@ a {
 	justify-content: center;
 }
 
+.jogs-list a {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	transition: padding 0.2s;
+}
+
+.jogs-list a:hover {
+	padding: 20px;
+	transition: padding 0.2s;
+}
+
 .jogs-list .item:first-child {
 	margin-top: 58px;
 }
@@ -89,17 +104,14 @@ a {
 .jogs-list .item {
 	width: max-content;
 	margin: auto;
-	display: flex;
-	flex-direction: row;
 	margin-top: 78.3px;
-	transition: padding 0.2s;
 	border-radius: 11px;
+	transition: box-shadow .2s;	
 }
 
 .jogs-list .item:hover {
-	padding: 20px;
-	transition: padding 0.2s;
-	box-shadow: 0 0 20px rgba(126, 211, 33, 1)	
+	box-shadow: 0 0 20px rgba(126, 211, 33, 1);
+	transition: box-shadow .2s;	
 }
 
 .jogs-list .item .icon {
@@ -132,4 +144,39 @@ a {
 	position: fixed;
 	right: 40px;
 	bottom: 40px;
+}
+
+@media (max-width: 670px) {
+	.from > span, .to > span {
+		font-size: 13px;
+		margin-right: 7.5px;
+	}
+	.from input, .to input {
+		width: 72px;
+		padding: 0 5px; 
+	}
+	.from {
+		margin-right: 2%;
+	}
+
+	.to {
+		margin-left: 2%;
+	}
+	.jogs-list .item {
+		width: 100%;
+		margin: 0 !important;
+		border-radius: 0;
+		border-bottom: 2px solid rgb(215, 215, 215);
+	}
+	.jogs-list .item:hover {
+		box-shadow: none;
+	}
+	.jogs-list .item a {
+		padding: 45px 0;
+		width: 100%;
+	}
+	.jogs-list .item .icon {
+	margin: 0;
+	margin-right: 23px;
+}
 }

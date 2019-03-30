@@ -86,3 +86,42 @@
 	background-color: #fff;
 	color: #7ed321;
 }
+
+@media (max-width: 670px) {
+	.scamper-info-container {
+		width: 81.2%;
+		margin-top: 23.8%;
+		border-radius: 29px;
+	}
+	.scamper-info-container > .info {
+		width: 80%;
+		-ms-align-self: center;
+		align-self: center;
+	}
+	.scamper-info-container > .info > div {
+		flex-direction: column;
+		margin-top: 20px;
+	}
+	.scamper-info-container > .info > div input {
+		margin-top: 6px;
+		width: 100%;
+	}
+	.scamper-info-container > .info > .distance {
+		margin-top: 25px;
+	}
+	.scamper-info-container > .info > .btn > .save-changes {
+		padding: 15px 23%;
+	}
+	.scamper-info-container > .info > .btn {
+		margin: 41px auto 27px auto;
+	}
+	.react-datepicker__input-container {
+		width: 100%;
+	}
+}
+
+@media (max-width: 330px) {
+	.scamper-info-container {
+		margin-top: 13.8%;
+	}
+}

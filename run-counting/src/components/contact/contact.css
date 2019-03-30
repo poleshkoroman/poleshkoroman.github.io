@@ -33,3 +33,9 @@
 	margin-top: 10px;
 }
 
+@media (max-width: 330px) {
+	.contact-container img {
+		margin-top: 50px;
+	}
+}
+
