@@ -19,7 +19,7 @@ class JogsList extends Component {
         	time: null
         },
       ],
-      sourceArray: [
+      jogsCopy: [
         {
           date: null,
           speed: null,
@@ -57,12 +57,6 @@ class JogsList extends Component {
 
     componentWillUnmount = () => {
       document.getElementsByClassName('filter-toggle')[0].classList.add('hidden');
-    }
-
-    getRandomDate = () => {
-      let temp = new Date();
-      temp.setFullYear(Math.floor(Math.random() * 4) + 2015, 11, 20);
-      return temp.getTime()
     }
 
   	filterByStartDate = (date) => {
@@ -121,9 +115,12 @@ class JogsList extends Component {
         date: e.target.getAttribute('date'),
         distance: e.target.getAttribute('distance'),
         time: e.target.getAttribute('time'),
+        jog_id: e.target.getAttribute('jog_id'),
+        user_id: e.target.getAttribute('user_id'),
         flag: "edit"
       }
       this.props.setCurrentRun(obj);
+      localStorage.setItem('cur_obj', JSON.stringify(obj));
     }
 
     onAddClick = () => {
@@ -131,9 +128,12 @@ class JogsList extends Component {
         date: new Date(),
         distance: null,
         time: null,
+        jog_id: null,
+        user_id: null,
         flag: "add"
       }
       this.props.setCurrentRun(obj);
+      localStorage.setItem('cur_obj', JSON.stringify(obj));
     }
 
   	createItems = (array) => {
@@ -141,7 +141,7 @@ class JogsList extends Component {
   		return array.map((item, index) => {
   			return (
   	  			<div className="item" key={ index } onClick={ this.onElementClick } >
-              <Link to={{ pathname: '/scamper' }} date={ item.date } speed={ item.speed } distance={ item.distance } time={ item.time }>
+              <Link to={{ pathname: '/scamper' }} date={ item.date } speed={ item.speed } distance={ item.distance } time={ item.time } jog_id={ item.id } user_id = { item.user_id }>
     	  				<div className="icon">
     		  				<svg xmlns="http://www.w3.org/2000/svg" width="87" height="87" viewBox="0 0 87 87">
     						    <g fill="none" fillRule="evenodd">
@@ -167,7 +167,6 @@ class JogsList extends Component {
 
   	render() {
   		const items = this.createItems(this.state.jogs);
-      console.log(items);
     	return (
     		<div className="jogs-list-container">
     			<div className="filter">

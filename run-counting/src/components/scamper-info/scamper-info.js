@@ -19,7 +19,16 @@ class ScamperInfo extends Component {
     jogsServices = new JogsServices();
 
   	componentDidMount = () => {
-  		this.setParams(this.props.props.current_run);
+  		this.setParams(this.props.props.current_run);	
+  		window.onload = () => {
+  			let obj = JSON.parse(localStorage.getItem('cur_obj'));
+  			document.querySelector('.distance input').value = obj.distance;
+  			document.querySelector('.time input').value = obj.time;
+  			let temp = new Date(+obj.date);
+  			let str = `${ (temp.getMonth() + 1) < 10 ? "0" + (temp.getMonth() + 1) : temp.getMonth() + 1 }/${ temp.getDate() < 10 ? "0" + temp.getDate() : temp.getDate() }/${ temp.getYear()+1900 }`;
+  			document.querySelector('.date input').value = str;
+  			this.props.setParametrsAfterReload(obj.jog_id, obj.user_id);
+  		}
   	}
 
   	setParams = ({ date, distance, time }) => {
@@ -34,12 +43,36 @@ class ScamperInfo extends Component {
     	});
   	}
 
-  	addJogs = () => {
+  	addRun = (e) => {
   		let obj = {};
   		obj.distance = +document.querySelector('.distance input').value;
   		obj.time = +document.querySelector('.time input').value;
   		obj.date = this.state.current_run.date;
-  		this.jogsServices.addJogs(localStorage.getItem('token'), localStorage.getItem('token_type'), obj);
+  		for (let key in obj) {
+  			if (!obj[key] || obj[key] === "") {
+  				alert(`Не все поля заполнены!`);
+  				e.preventDefault();
+  				return;
+  			}
+  		}
+  		this.jogsServices.addRun(localStorage.getItem('token'), localStorage.getItem('token_type'), obj);
+  	}
+
+  	editRun = (e) => {
+  		let obj = {};
+  		obj.distance = +document.querySelector('.distance input').value;
+  		obj.time = +document.querySelector('.time input').value;
+  		obj.date = this.state.current_run.date;
+  		obj.jog_id = +this.props.props.current_run.jog_id;
+  		obj.user_id = this.props.props.current_run.user_id;	
+  		for (let key in obj) {
+  			if (!obj[key] || obj[key] === "") {
+  				alert(`Не все поля заполнены!`);
+  				e.preventDefault();
+  				return;
+  			}
+  		}
+  		this.jogsServices.editRun(localStorage.getItem('token'), localStorage.getItem('token_type'), obj);
   	}
 
   	render() {
@@ -69,7 +102,7 @@ class ScamperInfo extends Component {
 						/>
 		    		</div>
 		    		<div className="btn">
-		    		 	<Link to={{ pathname: '/jogs' }} onClick={ this.addJogs } className="save-changes">Save</Link>
+		    		 	<Link to={{ pathname: '/jogs' }} onClick={ this.props.props.current_run.flag === "add" ? this.addRun : this.editRun } className="save-changes">Save</Link>
 		    		 </div>
 		    	</div>
 	    	</div>

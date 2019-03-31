@@ -10,7 +10,7 @@ export default class JogsService {
                 }).then(
                   function (response) {
                     if (response.status !== 200) {
-                      console.log('Looks like there was a problem. Status Code: ' + response.status);
+                      // console.log('Looks like there was a problem. Status Code: ' + response.status);
                     }
                     return response.json();
                 })
@@ -31,7 +31,7 @@ export default class JogsService {
                       }).then(
                           function (response) {
                             if (response.status !== 200) {
-                              console.log('Looks like there was a problem. Status Code: ' + response.status);
+                              // console.log('Looks like there was a problem. Status Code: ' + response.status);
                             }
                             return response.json();
                           })
@@ -40,8 +40,7 @@ export default class JogsService {
                         })
     return res;
   }
-  async addJogs(token, token_type, obj) {
-    console.log(obj);
+  async addRun(token, token_type, obj) {
     const url = `${this._apiBase}/v1/data/jog`;
     const res = await fetch(url, {
                         method: "POST",
@@ -53,7 +52,27 @@ export default class JogsService {
                       }).then(
                           function (response) {
                             if (response.status !== 200) {
-                              console.log('Looks like there was a problem. Status Code: ' + response.status);
+                              // console.log('Looks like there was a problem. Status Code: ' + response.status);
+                            }
+                            return response.json();
+                          })
+                        .then(function (data) {
+                          return data
+                        })
+  }
+  async editRun(token, token_type, obj) {
+    const url = `${this._apiBase}/v1/data/jog`;
+    const res = await fetch(url, {
+                        method: "PUT",
+                        headers: {
+                          "Accept": "application/json",
+                          "Authorization": `${token_type} ${token}`
+                        },
+                        body: JSON.stringify(obj)
+                      }).then(
+                          function (response) {
+                            if (response.status !== 200) {
+                              // console.log('Looks like there was a problem. Status Code: ' + response.status);
                             }
                             return response.json();
                           })

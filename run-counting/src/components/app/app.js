@@ -21,6 +21,8 @@ class App extends Component {
     		speed: null,
     		distance: null,
       		time: null,
+      		jog_id: null,
+      		user_id: null,
       		flag: null
       	},
 	}
@@ -31,6 +33,10 @@ class App extends Component {
 
 	setCurrentRun = (obj) => {
 		this.setState({ current_run: obj });
+	}
+
+	setParametrsAfterReload = (jog_id, user_id) => {
+		this.setState({ current_run: {jog_id, user_id}});
 	}
 
   	render() {
@@ -44,7 +50,7 @@ class App extends Component {
 			    		<Route path='/menu' render={ (props) => <MobileMenu props={ this.state } />} />
 			            <Route path='/empty' component={ EmptyList } />
 			            <Route path='/jogs' render={ (props) => <JogsList setCurrentRun={ this.setCurrentRun } props={ props } />} />
-			            <Route path='/scamper' render={ (props) => <ScamperInfo props={ this.state } />} />
+			            <Route path='/scamper' render={ (props) => <ScamperInfo props={ this.state } setParametrsAfterReload={this.setParametrsAfterReload} />} />
 			            <Route path='/info' component={ Info } />
 			            <Route path='/contact' component={ Contact } />
 			    	</Switch>	
