@@ -13,24 +13,44 @@ import MobileMenu from '../mobile-menu';
 import './app.css';
 
 class App extends Component {
-  render() {
-    return (
-    	<div className="wrapper">
-    		<BrowserRouter>
-	    		<Header />
-		    		<Switch>
-		    			<Route exact path='/' component={ Authorization } />
-		    			<Route path='/menu' component= { MobileMenu } />
-		                <Route path='/jogsempty' component={ EmptyList } />
-		                <Route path='/jogs' component={ JogsList } />
-		                <Route path='/scamper' component={ ScamperInfo } />
-		                <Route path='/info' component={ Info } />
-		                <Route path='/contact' component={ Contact } />
-		    		</Switch>	
-	    	</BrowserRouter>
-    	</div>
-    );
-  }
+
+	state = {
+		from_page : null,
+		current_run : {
+    		date: null,
+    		speed: null,
+    		distance: null,
+      		time: null
+      	},
+	}
+
+	setPage = (pathname) => {
+		this.setState({ from_page: pathname });
+	}
+
+	setCurrentRun = (obj) => {
+		this.setState({ current_run: obj });
+	}
+
+  	render() {
+
+	    return (
+	    	<div className="wrapper">
+	    		<BrowserRouter>
+		    		<Header setPage = { this.setPage } />
+			    	<Switch>
+			    		<Route exact path='/' component={ Authorization } />
+			    		<Route path='/menu' render={ (props) => <MobileMenu props={ this.state } />} />
+			            <Route path='/jogsempty' component={ EmptyList } />
+			            <Route path='/jogs' render={ (props) => <JogsList setCurrentRun={ this.setCurrentRun } />} />
+			            <Route path='/scamper' render={ (props) => <ScamperInfo props={ this.state } />} />
+			            <Route path='/info' component={ Info } />
+			            <Route path='/contact' component={ Contact } />
+			    	</Switch>	
+		    	</BrowserRouter>
+	    	</div>
+	    );
+  	}
 }
 
 export default App;

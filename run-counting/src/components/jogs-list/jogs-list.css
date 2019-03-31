@@ -109,6 +109,10 @@ a {
 	transition: box-shadow .2s;	
 }
 
+.jogs-list .item a * {
+	pointer-events: none;
+}
+
 .jogs-list .item:hover {
 	box-shadow: 0 0 20px rgba(126, 211, 33, 1);
 	transition: box-shadow .2s;	

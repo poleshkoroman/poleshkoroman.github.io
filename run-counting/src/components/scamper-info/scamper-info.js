@@ -7,20 +7,32 @@ import "react-datepicker/dist/react-datepicker.css";
 import './scamper-info.css';
 
 class ScamperInfo extends Component {
-	constructor(props) {
-    	super(props);
-    	this.state = {
-      		startDate: new Date(),
-    	};
-  	}
+	state = {
+    	current_run: {
+    		date: new Date(),
+    		distance: null,
+    		time: null,
+    	}
+    }
 
   	handleChange = (date) => {
     	this.setState({
-      		startDate: date
+      		current_run: { distance: this.props.props.current_run.distance, time: this.props.props.current_run.time, date } 
     	});
   	}
 
+  	componentDidMount = () => {
+  		this.setParams(this.props.props.current_run);
+  	}
+
+  	setParams = ({ date, distance, time }) => {
+  		this.setState({
+  			current_run: { distance, time, date: new Date(+date) }
+  		})
+  	}
+
   	render() {
+
 	    return (
 	    	<div className="scamper-info-container">
 	    		<Link to={{ pathname: '/jogs' }} className="close">
@@ -31,16 +43,16 @@ class ScamperInfo extends Component {
 	    		<div className="info">
 		    		<div className="distance">
 		    			<span>Distance</span>
-		    			<input />
+		    			<input defaultValue={ this.state.current_run.distance == null ? "" : this.state.current_run.distance }></input>
 		    		</div>	
 		    		<div className="Time">
 		    			<span>Time</span>
-		    			<input />
+		    			<input defaultValue={ this.state.current_run.time == null ? "" : this.state.current_run.time }></input>
 		    		</div>	
 		    		<div className="Date">
 		    			<span>Date</span>
 		    			<DatePicker
-							selected={this.state.startDate}
+							selected={this.state.current_run.date}
 							onChange={this.handleChange}
 							calendarClassName="calendar"
 						/>

@@ -7,22 +7,33 @@ import './jogs-list.css';
 
 class JogsList extends Component {
 
-	constructor(props) {
-    	super(props);
-    	this.state = {
-      		startDate: new Date(),
-      		running: [
-      			{
-      				date: null,
-      				speed: null,
-      				distance: null,
-      				time: null
-      			},
-      		]
-    	};
-  	}
+  	state = {
+      startDate: null,
+      finalDate: null,
+      jogs: [
+        {
+        	date: null,
+        	speed: null,
+        	distance: null,
+        	time: null
+        },
+      ],
+      sourceArray: [
+        {
+          date: null,
+          speed: null,
+          distance: null,
+          time: null
+        }
+      ]
+    };
+    getRandomDate = () => {
+      let temp = new Date();
+      temp.setFullYear(Math.floor(Math.random() * 4) + 2015, 11, 20);
+      return temp.getTime()
+    }
 
-  	componentDidMount = () => {
+   	componentDidMount = () => {
 
       document.getElementsByClassName('filter-toggle')[0].classList.remove('hidden');
 
@@ -30,43 +41,41 @@ class JogsList extends Component {
         document.getElementsByClassName('filter')[0].classList.add('active');
       }
 
-  		let temp = new Date();
-      temp.setFullYear(2017, 11, 20);
-      let str = `${ temp.getDate() }.${ temp.getMonth() + 1 }.${ temp.getYear()+1900 }`;
-  		this.setState({
-  			running: [
-  				{
-      				date: str,
-      				speed: 15,
-      				distance: 10,
-      				time: 60
-      			},
-      			{
-      				date: str,
-      				speed: 15,
-      				distance: 10,
-      				time: 60
-      			},
-      			{
-      				date: str,
-      				speed: 15,
-      				distance: 10,
-      				time: 60
-      			},
-      			{
-      				date: str,
-      				speed: 15,
-      				distance: 10,
-      				time: 60
-      			},
-      			{
-      				date: str,
-      				speed: 15,
-      				distance: 10,
-      				time: 60
-      			}
+      const array = [
+            {
+              date: this.getRandomDate(),
+              speed: 15,
+              distance: 10,
+              time: 60
+            },
+            {
+              date: this.getRandomDate(),
+              speed: 15,
+              distance: 10,
+              time: 60
+            },
+            {
+              date: this.getRandomDate(),
+              speed: 15,
+              distance: 10,
+              time: 60
+            },
+            {
+              date: this.getRandomDate(),
+              speed: 15,
+              distance: 10,
+              time: 60
+            },
+            {
+              date: this.getRandomDate(),
+              speed: 15,
+              distance: 10,
+              time: 60
+            }
 
-  			]
+      ]
+  		this.setState({
+  			jogs: array, jogsCopy: array
   		});
   	}
 
@@ -74,18 +83,80 @@ class JogsList extends Component {
       document.getElementsByClassName('filter-toggle')[0].classList.add('hidden');
     }
 
-  	handleChange = (date) => {
-    	this.setState({
-      		startDate: date
-    	});
+  	filterByStartDate = (date) => {
+      if (date !== null) {
+        let filterByStartDate = this.state.jogs.filter((item) => {
+          return date.getTime() < item.date
+        })
+        this.setState({ jogs: filterByStartDate, startDate: date.getTime() });
+      } 
+      else {
+        let temp = new Date(this.state.finalDate);
+        this.resetFilterByStartDate(temp, this.state.jogsCopy);
+      } 	
   	}
 
-  	createItems = () => {
-  		return this.state.running.map((item, index) => {
+    resetFilterByStartDate = (date, array) => {
+      let newArr = array.filter((item) => {
+        return date.getTime() > item.date
+      })
+      this.setState({ jogs: newArr, startDate: null });
+    }
+
+    filterByFinalDate = (date) => {
+
+      if (date !== null) {
+        let filterByFinalDate = this.state.jogs.filter((item) => {
+          return date.getTime() > item.date
+        })
+        this.setState({ jogs: filterByFinalDate, finalDate: date.getTime() });
+      }
+      else {
+        let temp = new Date(this.state.startDate);
+        this.resetFilterByFinalDate(temp, this.state.jogsCopy);
+      }
+    }
+    resetFilterByFinalDate = (date, array) => {
+      let newArr = array.filter((item) => {
+        return date.getTime() < item.date
+      })
+      this.setState({ jogs: newArr, finalDate: null });
+    }
+
+    convertMillisecondsToDateTypeString = (value) => {
+      let temp = new Date(value);
+      let str = `${ temp.getDate() }.${ temp.getMonth() + 1 }.${ temp.getYear()+1900 }`;
+      return str;
+    }
+
+    convertMillisecondsToDate = (value) => {
+      if (value) return new Date(value)
+        else return null;
+    }
+
+    onElementClick = (e) => {
+      const obj = {
+        date: e.target.getAttribute('date'),
+        distance: e.target.getAttribute('distance'),
+        time: e.target.getAttribute('time')
+      }
+      this.props.setCurrentRun(obj);
+    }
+
+    onAddClick = () => {
+      const obj = {
+        date: new Date(),
+        distance: null,
+        time: null
+      }
+      this.props.setCurrentRun(obj);
+    }
+
+  	createItems = (array) => {
+  		return array.map((item, index) => {
   			return (
-          
-  	  			<div className="item" key={ index }>
-              <Link to={{ pathname: '/scamper' }} >
+  	  			<div className="item" key={ index } onClick={ this.action } >
+              <Link to={{ pathname: '/scamper' }} date={ item.date } speed={ item.speed } distance={ item.distance } time={ item.time }>
     	  				<div className="icon">
     		  				<svg xmlns="http://www.w3.org/2000/svg" width="87" height="87" viewBox="0 0 87 87">
     						    <g fill="none" fillRule="evenodd">
@@ -98,7 +169,7 @@ class JogsList extends Component {
       						</svg>
       					</div>
       					<div className="info">
-      						<span className="date">{ item.date }</span>
+      						<span className="date">{ this.convertMillisecondsToDateTypeString(item.date) }</span>
       						<p className="speed">Speed: <span>{ item.speed }</span></p>
       						<p className="distance">Distance: <span>{ item.distance } km</span></p>
       						<p className="time">Time: <span>{ item.time } min</span></p>
@@ -110,31 +181,31 @@ class JogsList extends Component {
   	}
 
   	render() {
-  		const items = this.createItems();
+  		const items = this.createItems(this.state.jogs);
     	return (
     		<div className="jogs-list-container">
     			<div className="filter">
     				<div className="from">
     					<span>Date from</span>
     					<DatePicker
-					    	selected={this.state.startDate}
-					    	onChange={this.handleChange}
+					    	selected={this.convertMillisecondsToDate(this.state.startDate)}
+					    	onChange={this.filterByStartDate}
 					    	calendarClassName="calendar"
 						/>
     				</div>
     				<div className="to">
     					<span>Date to</span>
     					<DatePicker
-					    	selected={this.state.startDate}
-					    	onChange={this.handleChange}
+					    	selected={this.convertMillisecondsToDate(this.state.finalDate)}
+					    	onChange={this.filterByFinalDate}
 					    	calendarClassName="calendar"
 						/>
     				</div>
     			</div>
-    			<div className="jogs-list">
+    			<div className="jogs-list" onClick={ this.onElementClick }>
     				{ items }
     			</div>
-          <Link to={{ pathname: '/scamper' }}>
+          <Link to={{ pathname: '/scamper' }} onClick={ this.onAddClick }>
       			<svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60" className="add-a-run">
   				    <defs>
   				        <path id="a" d="M.039.128h59.883v59.234H.039z"/>
