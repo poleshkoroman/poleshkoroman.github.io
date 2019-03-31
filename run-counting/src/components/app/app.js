@@ -20,7 +20,8 @@ class App extends Component {
     		date: null,
     		speed: null,
     		distance: null,
-      		time: null
+      		time: null,
+      		flag: null
       	},
 	}
 
@@ -41,8 +42,8 @@ class App extends Component {
 			    	<Switch>
 			    		<Route exact path='/' component={ Authorization } />
 			    		<Route path='/menu' render={ (props) => <MobileMenu props={ this.state } />} />
-			            <Route path='/jogsempty' component={ EmptyList } />
-			            <Route path='/jogs' render={ (props) => <JogsList setCurrentRun={ this.setCurrentRun } />} />
+			            <Route path='/empty' component={ EmptyList } />
+			            <Route path='/jogs' render={ (props) => <JogsList setCurrentRun={ this.setCurrentRun } props={ props } />} />
 			            <Route path='/scamper' render={ (props) => <ScamperInfo props={ this.state } />} />
 			            <Route path='/info' component={ Info } />
 			            <Route path='/contact' component={ Contact } />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import JogsServices from '../../services/jogs-service';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -27,11 +28,8 @@ class JogsList extends Component {
         }
       ]
     };
-    getRandomDate = () => {
-      let temp = new Date();
-      temp.setFullYear(Math.floor(Math.random() * 4) + 2015, 11, 20);
-      return temp.getTime()
-    }
+
+    jogsServices = new JogsServices();
 
    	componentDidMount = () => {
 
@@ -40,47 +38,31 @@ class JogsList extends Component {
       if (document.getElementsByClassName('filter-toggle')[0].classList.contains('active')) {
         document.getElementsByClassName('filter')[0].classList.add('active');
       }
-
-      const array = [
-            {
-              date: this.getRandomDate(),
-              speed: 15,
-              distance: 10,
-              time: 60
-            },
-            {
-              date: this.getRandomDate(),
-              speed: 15,
-              distance: 10,
-              time: 60
-            },
-            {
-              date: this.getRandomDate(),
-              speed: 15,
-              distance: 10,
-              time: 60
-            },
-            {
-              date: this.getRandomDate(),
-              speed: 15,
-              distance: 10,
-              time: 60
-            },
-            {
-              date: this.getRandomDate(),
-              speed: 15,
-              distance: 10,
-              time: 60
-            }
-
-      ]
-  		this.setState({
-  			jogs: array, jogsCopy: array
-  		});
+      let prom = this.jogsServices.getJogs(localStorage.getItem('token'), localStorage.getItem('token_type'));
+      prom.then((data) => {
+        if (data.response == undefined) {
+          this.props.props.history.push('empty');
+          return
+        }
+        let array = data.response.jogs;
+        array.forEach((item) => {
+          item.speed = (item.distance / item.time).toFixed(2); 
+        })
+        this.setState({
+          jogs: array,
+          jogsCopy: array
+        });
+      })
   	}
 
     componentWillUnmount = () => {
       document.getElementsByClassName('filter-toggle')[0].classList.add('hidden');
+    }
+
+    getRandomDate = () => {
+      let temp = new Date();
+      temp.setFullYear(Math.floor(Math.random() * 4) + 2015, 11, 20);
+      return temp.getTime()
     }
 
   	filterByStartDate = (date) => {
@@ -125,7 +107,7 @@ class JogsList extends Component {
 
     convertMillisecondsToDateTypeString = (value) => {
       let temp = new Date(value);
-      let str = `${ temp.getDate() }.${ temp.getMonth() + 1 }.${ temp.getYear()+1900 }`;
+      let str = `${ temp.getDate() < 10 ? "0" + temp.getDate() : temp.getDate() }.${ (temp.getMonth() + 1) < 10 ? "0" + (temp.getMonth() + 1) : temp.getMonth() + 1 }.${ temp.getYear()+1900 }`;
       return str;
     }
 
@@ -138,7 +120,8 @@ class JogsList extends Component {
       const obj = {
         date: e.target.getAttribute('date'),
         distance: e.target.getAttribute('distance'),
-        time: e.target.getAttribute('time')
+        time: e.target.getAttribute('time'),
+        flag: "edit"
       }
       this.props.setCurrentRun(obj);
     }
@@ -147,15 +130,17 @@ class JogsList extends Component {
       const obj = {
         date: new Date(),
         distance: null,
-        time: null
+        time: null,
+        flag: "add"
       }
       this.props.setCurrentRun(obj);
     }
 
   	createItems = (array) => {
+      if (!array[0] || array[0].distance == null) return null;
   		return array.map((item, index) => {
   			return (
-  	  			<div className="item" key={ index } onClick={ this.action } >
+  	  			<div className="item" key={ index } onClick={ this.onElementClick } >
               <Link to={{ pathname: '/scamper' }} date={ item.date } speed={ item.speed } distance={ item.distance } time={ item.time }>
     	  				<div className="icon">
     		  				<svg xmlns="http://www.w3.org/2000/svg" width="87" height="87" viewBox="0 0 87 87">
@@ -170,7 +155,7 @@ class JogsList extends Component {
       					</div>
       					<div className="info">
       						<span className="date">{ this.convertMillisecondsToDateTypeString(item.date) }</span>
-      						<p className="speed">Speed: <span>{ item.speed }</span></p>
+      						<p className="speed">Speed: <span>{ item.speed } km/min</span></p>
       						<p className="distance">Distance: <span>{ item.distance } km</span></p>
       						<p className="time">Time: <span>{ item.time } min</span></p>
       					</div>
@@ -182,6 +167,7 @@ class JogsList extends Component {
 
   	render() {
   		const items = this.createItems(this.state.jogs);
+      console.log(items);
     	return (
     		<div className="jogs-list-container">
     			<div className="filter">

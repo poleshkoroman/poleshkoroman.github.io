@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import JogsServices from '../../services/jogs-service';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,11 +16,7 @@ class ScamperInfo extends Component {
     	}
     }
 
-  	handleChange = (date) => {
-    	this.setState({
-      		current_run: { distance: this.props.props.current_run.distance, time: this.props.props.current_run.time, date } 
-    	});
-  	}
+    jogsServices = new JogsServices();
 
   	componentDidMount = () => {
   		this.setParams(this.props.props.current_run);
@@ -29,6 +26,20 @@ class ScamperInfo extends Component {
   		this.setState({
   			current_run: { distance, time, date: new Date(+date) }
   		})
+  	}
+
+  	handleChange = (date) => {
+    	this.setState({
+      		current_run: { distance: this.props.props.current_run.distance, time: this.props.props.current_run.time, date } 
+    	});
+  	}
+
+  	addJogs = () => {
+  		let obj = {};
+  		obj.distance = +document.querySelector('.distance input').value;
+  		obj.time = +document.querySelector('.time input').value;
+  		obj.date = this.state.current_run.date;
+  		this.jogsServices.addJogs(localStorage.getItem('token'), localStorage.getItem('token_type'), obj);
   	}
 
   	render() {
@@ -45,11 +56,11 @@ class ScamperInfo extends Component {
 		    			<span>Distance</span>
 		    			<input defaultValue={ this.state.current_run.distance == null ? "" : this.state.current_run.distance }></input>
 		    		</div>	
-		    		<div className="Time">
+		    		<div className="time">
 		    			<span>Time</span>
 		    			<input defaultValue={ this.state.current_run.time == null ? "" : this.state.current_run.time }></input>
 		    		</div>	
-		    		<div className="Date">
+		    		<div className="date">
 		    			<span>Date</span>
 		    			<DatePicker
 							selected={this.state.current_run.date}
@@ -58,7 +69,7 @@ class ScamperInfo extends Component {
 						/>
 		    		</div>
 		    		<div className="btn">
-		    		 	<Link to={{ pathname: '/jogs' }} className="save-changes">Save</Link>
+		    		 	<Link to={{ pathname: '/jogs' }} onClick={ this.addJogs } className="save-changes">Save</Link>
 		    		 </div>
 		    	</div>
 	    	</div>

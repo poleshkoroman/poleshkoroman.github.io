@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
+import JogsServices from '../../services/jogs-service';
 import { Link } from 'react-router-dom'
 import './auth.css';
 
 class Authorization extends Component {
 
-	constructor(props) {
-    	super(props);
-  	}
+	jogsServices = new JogsServices();
 
   	componentDidMount = () => {
   		document.getElementsByClassName('menu')[0].classList.toggle('hidden');
+  		
   	}
 
 	componentWillUnmount = () => {
 		document.getElementsByClassName('menu')[0].classList.toggle('hidden');
+	}
+	setToken = () => {
+		let prom = this.jogsServices.getToken();
+		prom.then((data) => {
+			localStorage.setItem('token', data.response.access_token);
+			localStorage.setItem('token_type', data.response.token_type);
+		})
 	}
 
   	render() {
@@ -38,7 +45,7 @@ class Authorization extends Component {
 					</svg>
 				</div>
 				<div className="btn">
-					<Link to={{ pathname: '/jogs' }}>Let me in</Link>
+					<Link to={{ pathname: '/jogs' }} onClick={ this.setToken }>Let me in</Link>
 				</div>
 	    	</div>
 	    );
