@@ -24,5 +24,10 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {}
+  "devDependencies": {},
+  "main": "app.js",
+  "engines": {
+    "node": "0.10.26",
+    "npm": "1.4.3"
+  }
 }
