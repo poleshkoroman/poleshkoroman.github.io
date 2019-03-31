@@ -9,8 +9,8 @@ export default class JogsService {
                   body: JSON.stringify({ uuid: "hello" }),
                 }).then(
                   function (response) {
-                    if (response.status !== 200) {
-                      // console.log('Looks like there was a problem. Status Code: ' + response.status);
+                    if (response.status !== 201) {
+                      console.log('Looks like there was a problem. Status Code: ' + response.status);
                     }
                     return response.json();
                 })
@@ -30,8 +30,8 @@ export default class JogsService {
                         }
                       }).then(
                           function (response) {
-                            if (response.status !== 200) {
-                              // console.log('Looks like there was a problem. Status Code: ' + response.status);
+                            if (response.status !== 201) {
+                              console.log('Looks like there was a problem. Status Code: ' + response.status);
                             }
                             return response.json();
                           })
@@ -51,8 +51,8 @@ export default class JogsService {
                         body: JSON.stringify(obj)
                       }).then(
                           function (response) {
-                            if (response.status !== 200) {
-                              // console.log('Looks like there was a problem. Status Code: ' + response.status);
+                            if (response.status !== 201) {
+                              console.log('Looks like there was a problem. Status Code: ' + response.status);
                             }
                             return response.json();
                           })
@@ -71,8 +71,8 @@ export default class JogsService {
                         body: JSON.stringify(obj)
                       }).then(
                           function (response) {
-                            if (response.status !== 200) {
-                              // console.log('Looks like there was a problem. Status Code: ' + response.status);
+                            if (response.status !== 201) {
+                              console.log('Looks like there was a problem. Status Code: ' + response.status);
                             }
                             return response.json();
                           })
