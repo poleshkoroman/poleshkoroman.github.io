@@ -11,7 +11,7 @@ div.small-header {
 }
 
 div.small-header > div.logo {
-	margin-left: 10px;
+	margin-left: 15px;
 	-webkit-transform: rotate(0deg);
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 550ms;
