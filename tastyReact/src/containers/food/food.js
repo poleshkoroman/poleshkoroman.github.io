@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Loader from '../../components/Loader';
 import { toggleFavorites, loadFood, addToCart, changeFoodInCart } from '../../redux/actions';
+import { showModal } from '../../utils/utils';
 import './food.css'
 
 class Food extends Component {
 
     state = {
-        count: this.props.history.location.state ? this.props.history.location.state.count : 1,
+        count: this.props.history.location.state && this.props.history.location.state.count ? this.props.history.location.state.count : 1,
     }
 
     componentDidMount = () => {
@@ -16,7 +17,6 @@ class Food extends Component {
             history,
         } = this.props;
         loadFood(history.location.pathname.substring(6));
-        console.log(history.location.state);
     }
 
     getTotalPrice = obj => {
@@ -65,10 +65,7 @@ class Food extends Component {
         const food = JSON.parse(target.getAttribute('data-index'));
         const newFood = { ...food, count: this.state.count, cafeId: location.state ? location.state.fromCafe : undefined };
         target.outerText === 'В корзину' ? addToCart(newFood, cart) : changeFoodInCart(newFood, cart);   
-        document.getElementsByClassName('container-succesfull')[0].classList.add('on');
-			setTimeout(() => {
-				document.getElementsByClassName('container-succesfull')[0].classList.remove('on');
-		}, 3000);
+        showModal('ok', 'Товар добавлен в корзину!');
     }
 
     toggleFavorites = ({ target }) => {
@@ -130,7 +127,7 @@ class Food extends Component {
                                 <span>Цена</span>
                             </div>
                             <div className="div-price">
-                                <span className="span-price">{data.price_per_portion.toFixed(2)} р.</span>
+                                <span className="span-price">{data.price_per_portion} р.</span>
                             </div>
                         </div>
                         <div className="container-count">

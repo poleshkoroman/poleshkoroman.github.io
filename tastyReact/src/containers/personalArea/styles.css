@@ -37,7 +37,7 @@
 }
 
 .personalarea-info > .active {
-    background-color: #68076e;
+    background-color: rgba(104, 7, 110, 0.6);
     transition: background-color .5s;
 }
 
@@ -119,6 +119,7 @@
     font-size: medium;
     color: floralwhite;
     margin-bottom: 10px;
+    opacity: 1;
 }
 
 .favorites-content .container .favorites {
